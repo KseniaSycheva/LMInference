@@ -1,0 +1,5921 @@
+
+str=input("Enter the String:")
+len=0
+while str[len:]:
+    len+=1
+print("Your Enter String is:", len)
+Solution
+evenNumbers = filter(lambda x: x%2==0, range(1,21))
+print evenNumbers
+
+
+
+Solution
+def printValue(s1,s2):
+	print s1+s2
+
+printValue("3","4") #34
+
+
+def BinaryToDecimal(n):    if n==0:        return 0    else:        return (n% 10 + 2* BinaryToDecimal(n // 10))n=int(input("Enter the Binary Value:"))print("Decimal Value of Binary number is:",BinaryToDecimal(n))
+def binary_to_gray(n):
+    """Convert Binary to Gray codeword and return it."""
+    n = int(n, 2) # convert to int
+    n ^= (n >> 1)
+ 
+    # bin(n) returns n's binary representation with a '0b' prefixed
+    # the slice operation is to remove the prefix
+    return bin(n)[2:]
+ 
+ 
+g = input('Enter binary number: ')
+b = binary_to_gray(g)
+print('Gray codeword:', b)
+print("Enter octal number: ")
+octal=int(input())
+decimal = 0
+i = 0
+binary = 0
+while (octal != 0):
+      decimal = decimal + (octal % 10) * pow (8, i)
+      i+=1
+      octal = octal // 10
+i = 1
+while (decimal != 0):
+      binary = binary + (decimal % 2) * i
+      decimal = decimal // 2
+      i = i * 10
+print ("Binary number is: ", binary)
+
+
+
+
+n=int(input("Enter the range of number(Limit):"))i=0pr=2print("2 ",end="")while i<n-1:    pr = (pr * 2) -i    print(pr,end=" ")    i+=1
+# Get size of 1st matrix
+row_size=int(input("Enter the row Size Of the 1st Matrix:"))
+col_size=int(input("Enter the columns Size Of the 1st Matrix:"))
+
+# Get size of 2nd matrix
+row_size1=int(input("Enter the row Size Of the 1st Matrix:"))
+col_size1=int(input("Enter the columns Size Of the 2nd Matrix:"))
+
+matrix=[]
+# Taking input of the 1st matrix
+print("Enter the 1st Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+matrix1=[]
+# Taking input of the 2nd matrix
+print("Enter the 2nd Matrix Element:")
+for i in range(row_size):
+    matrix1.append([int(j) for j in input().split()])
+
+# Compare two matrices
+point=0
+if row_size==row_size1 and col_size==col_size1:
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            if matrix[i][j] != matrix1[i][j]:
+                point=1
+                break
+else:
+    print("Two matrices are not equal.")
+    exit(0)
+
+if point==1:
+    print("Two matrices are not equal.")
+else:
+    print("Two matrices are equal.")
+def Reverse_String(str):    if not str:        return str    else:        return Reverse_String(str[1:]) + str[0]str=input("Enter your String:")print("After Reversing String is: ",Reverse_String(str))
+def fact(x):
+    if x == 0:
+        return 1
+    return x * fact(x - 1)
+
+x=int(raw_input())
+print fact(x)
+
+n=int(input("Enter the range of number(Limit):"))i=4if n>=1:    print("1 ",end="")if n>=2:    print("2 ",end="")if n>=3:    print("5 ",end="")a=1b=2c=5while i<=n:    d = a + b + c    a = b    b = c    c = d    print(d,end=" ")    i+=1
+def power(base,exp):
+    if(exp==1):
+        return(base)
+    if(exp!=1):
+        return(base*power(base,exp-1))
+base=int(input("Enter base: "))
+exp=int(input("Enter exponential value: "))
+print("Result:",power(base,exp))
+class Stack:
+    def __init__(self):
+        self.items = []
+ 
+    def is_empty(self):
+        return self.items == []
+ 
+    def push(self, data):
+        self.items.append(data)
+ 
+    def pop(self):
+        return self.items.pop()
+ 
+ 
+s = Stack()
+exp = input('Please enter the expression: ')
+ 
+for c in exp:
+    if c == '(':
+        s.push(1)
+    elif c == ')':
+        if s.is_empty():
+            is_balanced = False
+            break
+        s.pop()
+else:
+    if s.is_empty():
+        is_balanced = True
+    else:
+        is_balanced = False
+ 
+if is_balanced:
+    print('Expression is correctly parenthesized.')
+else:
+    print('Expression is not correctly parenthesized.')
+
+str=input("Enter the String:")
+count=0
+for i in range(len(str)):
+    if str[i] == 'a' or str[i] == 'A' or str[i] == 'e' or str[i] == 'E' or str[i] == 'i'or str[i] == 'I' or str[i] == 'o' or str[i] == 'O' or str[i] == 'u' or str[i] == 'U':
+        count+=1
+if count==0:
+        print("No vowels are present in the string.")
+else:
+    print("Numbers of vowels present in the string are ",count)
+decimal=0sem=0def OctalToDecimal(n):    global sem,decimal    if(n!=0):        decimal+=(n%10)*pow(8,sem)        sem+=1        OctalToDecimal(n // 10)    return decimaln=int(input("Enter the Octal Value:"))print("Decimal Value of Octal number is:",OctalToDecimal(n))
+class Node:
+    def __init__(self, data):
+       self.data = data
+       self.next = None
+       self.prev = None
+ 
+ 
+class DoublyLinkedList:
+    def __init__(self):
+        self.first = None
+        self.last = None
+ 
+    def append(self, data):
+        self.insert_at_end(Node(data))
+ 
+    def insert_at_end(self, new_node):
+        if self.last is None:
+            self.last = new_node
+            self.first = new_node
+        else:
+            new_node.prev = self.last
+            self.last.next = new_node
+            self.last = new_node
+ 
+ 
+def find_largest(dllist):
+    if dllist.first is None:
+        return None
+    largest = dllist.first.data
+    current = dllist.first.next
+    while current:
+        if current.data > largest:
+            largest = current.data
+        current = current.next
+    return largest
+ 
+ 
+a_dllist = DoublyLinkedList()
+ 
+data_list = input('Please enter the elements in the doubly linked list: ').split()
+for data in data_list:
+    a_dllist.append(int(data))
+ 
+largest = find_largest(a_dllist)
+if largest:
+    print('The largest element is {}.'.format(largest))
+else:
+    print('The list is empty.')
+class Graph:
+    def __init__(self):
+        # dictionary containing keys that map to the corresponding vertex object
+        self.vertices = {}
+ 
+    def add_vertex(self, key):
+        """Add a vertex with the given key to the graph."""
+        vertex = Vertex(key)
+        self.vertices[key] = vertex
+ 
+    def get_vertex(self, key):
+        """Return vertex object with the corresponding key."""
+        return self.vertices[key]
+ 
+    def __contains__(self, key):
+        return key in self.vertices
+ 
+    def add_edge(self, src_key, dest_key, weight=1):
+        """Add edge from src_key to dest_key with given weight."""
+        self.vertices[src_key].add_neighbour(self.vertices[dest_key], weight)
+ 
+    def add_undirected_edge(self, v1_key, v2_key, weight=1):
+        """Add undirected edge (2 directed edges) between v1_key and v2_key with
+        given weight."""
+        self.add_edge(v1_key, v2_key, weight)
+        self.add_edge(v2_key, v1_key, weight)
+ 
+    def does_undirected_edge_exist(self, v1_key, v2_key):
+        """Return True if there is an undirected edge between v1_key and v2_key."""
+        return (self.does_edge_exist(v1_key, v2_key)
+                and self.does_edge_exist(v1_key, v2_key))
+ 
+    def does_edge_exist(self, src_key, dest_key):
+        """Return True if there is an edge from src_key to dest_key."""
+        return self.vertices[src_key].does_it_point_to(self.vertices[dest_key])
+ 
+    def __iter__(self):
+        return iter(self.vertices.values())
+ 
+ 
+class Vertex:
+    def __init__(self, key):
+        self.key = key
+        self.points_to = {}
+ 
+    def get_key(self):
+        """Return key corresponding to this vertex object."""
+        return self.key
+ 
+    def add_neighbour(self, dest, weight):
+        """Make this vertex point to dest with given edge weight."""
+        self.points_to[dest] = weight
+ 
+    def get_neighbours(self):
+        """Return all vertices pointed to by this vertex."""
+        return self.points_to.keys()
+ 
+    def get_weight(self, dest):
+        """Get weight of edge from this vertex to dest."""
+        return self.points_to[dest]
+ 
+    def does_it_point_to(self, dest):
+        """Return True if this vertex points to dest."""
+        return dest in self.points_to
+ 
+ 
+def is_cycle_present(v, visited):
+    """Return True if cycle is present in component containing vertex and put
+    all vertices in component in set visited."""
+    parent = {v: None}
+    return is_cycle_present_helper(v, visited, parent)
+ 
+ 
+def is_cycle_present_helper(v, visited, parent):
+    """Return True if cycle is present in component containing vertex and put
+    all vertices in component in set visited. Uses dictionary parent to keep
+    track of parents of nodes in the DFS tree."""
+    visited.add(v)
+    for dest in v.get_neighbours():
+        if dest not in visited:
+            parent[dest] = v
+            if is_cycle_present_helper(dest, visited, parent):
+                return True
+        else:
+            if parent[v] is not dest:
+                return True
+    return False
+ 
+ 
+g = Graph()
+print('Undirected Graph')
+print('Menu')
+print('add vertex <key>')
+print('add edge <vertex1> <vertex2>')
+print('cycle')
+print('display')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0]
+    if operation == 'add':
+        suboperation = do[1]
+        if suboperation == 'vertex':
+            key = int(do[2])
+            if key not in g:
+                g.add_vertex(key)
+            else:
+                print('Vertex already exists.')
+        elif suboperation == 'edge':
+            v1 = int(do[2])
+            v2 = int(do[3])
+            if v1 not in g:
+                print('Vertex {} does not exist.'.format(v1))
+            elif v2 not in g:
+                print('Vertex {} does not exist.'.format(v2))
+            else:
+                if not g.does_undirected_edge_exist(v1, v2):
+                    g.add_undirected_edge(v1, v2)
+                else:
+                    print('Edge already exists.')
+ 
+    elif operation == 'cycle':
+        present = False
+        visited = set()
+        for v in g:
+            if v not in visited:
+                if is_cycle_present(v, visited):
+                    present = True
+                    break
+ 
+        if present:
+            print('Cycle present.')
+        else:
+            print('Cycle not present.')
+ 
+    elif operation == 'display':
+        print('Vertices: ', end='')
+        for v in g:
+            print(v.get_key(), end=' ')
+        print()
+ 
+        print('Edges: ')
+        for v in g:
+            for dest in v.get_neighbours():
+                w = v.get_weight(dest)
+                print('(src={}, dest={}, weight={}) '.format(v.get_key(),
+                                                             dest.get_key(), w))
+        print()
+ 
+    elif operation == 'quit':
+        break
+
+rangenumber=int(input("Enter a Nth Number:"))
+c = 0
+letest = 0
+num = 1
+while c != rangenumber:
+    sum = 0
+    mult = 1
+    num1=num
+    while num1 != 0:
+        rem = num1 % 10
+        sum += rem
+        mult *= rem
+        num1 //= 10
+
+    if sum == mult:
+            c+=1
+            letest = num
+
+    num = num + 1
+print(rangenumber,"th Spy number is ",letest)
+
+
+'''Write a Python
+program to find out all How many 1 and 0 in a given number.
+or Write a program to find out all How many 1 and 0 in a given the number using Python '''
+
+print("Enter a number:")
+num=int(input())
+c1=0
+c0=0
+while int(num):
+    r=num%10
+    num=int(num/10)
+    if r==1:
+        c1=c1+1
+    if r==0:
+        c0=c0+1
+print("The total number of zero's are ",c0)
+print("The total number of one's are ",c1)
+
+
+
+# Get size of 1st matrix
+row_size=int(input("Enter the row Size Of the 1st Matrix:"))
+col_size=int(input("Enter the columns Size Of the 1st Matrix:"))
+
+# Get size of 2nd matrix
+row_size1=int(input("Enter the row Size Of the 1st Matrix:"))
+col_size1=int(input("Enter the columns Size Of the 2nd Matrix:"))
+
+matrix=[]
+# Taking input of the 1st matrix
+print("Enter the 1st Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+matrix1=[]
+# Taking input of the 2nd matrix
+print("Enter the 2nd Matrix Element:")
+for i in range(row_size):
+    matrix1.append([int(j) for j in input().split()])
+
+# Compare two matrices
+point=0
+if row_size==row_size1 and col_size==col_size1:
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            if matrix[i][j] != matrix1[i][j]:
+                point=1
+                break
+else:
+    print("Two matrices are not equal.")
+    exit(0)
+
+if point==1:
+    print("Two matrices are not equal.")
+else:
+    print("Two matrices are equal.")
+str=input("Enter Your String:")sub_str=str.split(" ")maxInd=0max=0max = len(sub_str[0])for inn in range(0,len(sub_str)):    len1 = len(sub_str[inn])    if len1 > max:        max=len1        maxInd=innprint("Longest Substring(Word) is ",sub_str[maxInd])
+def gray_to_binary(n):
+    """Convert Gray codeword to binary and return it."""
+    n = int(n, 2) # convert to int
+ 
+    mask = n
+    while mask != 0:
+        mask >>= 1
+        n ^= mask
+ 
+    # bin(n) returns n's binary representation with a '0b' prefixed
+    # the slice operation is to remove the prefix
+    return bin(n)[2:]
+ 
+ 
+g = input('Enter Gray codeword: ')
+b = gray_to_binary(g)
+print('In binary:', b)
+class Stack:
+    def __init__(self):
+        self.items = []
+ 
+    def is_empty(self):
+        return self.items == []
+ 
+    def push(self, data):
+        self.items.append(data)
+ 
+    def pop(self):
+        return self.items.pop()
+ 
+ 
+s = Stack()
+while True:
+    print('push <value>')
+    print('pop')
+    print('quit')
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'push':
+        s.push(int(do[1]))
+    elif operation == 'pop':
+        if s.is_empty():
+            print('Stack is empty.')
+        else:
+            print('Popped value: ', s.pop())
+    elif operation == 'quit':
+        break
+def find_max_subarray(alist, start, end):
+    """Returns (l, r, m) such that alist[l:r] is the maximum subarray in
+    A[start:end] with sum m. Here A[start:end] means all A[x] for start <= x <
+    end."""
+    # base case
+    if start == end - 1:
+        return start, end, alist[start]
+    else:
+        mid = (start + end)//2
+        left_start, left_end, left_max = find_max_subarray(alist, start, mid)
+        right_start, right_end, right_max = find_max_subarray(alist, mid, end)
+        cross_start, cross_end, cross_max = find_max_crossing_subarray(alist, start, mid, end)
+        if (left_max > right_max and left_max > cross_max):
+            return left_start, left_end, left_max
+        elif (right_max > left_max and right_max > cross_max):
+            return right_start, right_end, right_max
+        else:
+            return cross_start, cross_end, cross_max
+ 
+def find_max_crossing_subarray(alist, start, mid, end):
+    """Returns (l, r, m) such that alist[l:r] is the maximum subarray within
+    alist with start <= l < mid <= r < end with sum m. The arguments start, mid,
+    end must satisfy start <= mid <= end."""
+    sum_left = float('-inf')
+    sum_temp = 0
+    cross_start = mid
+    for i in range(mid - 1, start - 1, -1):
+        sum_temp = sum_temp + alist[i]
+        if sum_temp > sum_left:
+            sum_left = sum_temp
+            cross_start = i
+ 
+    sum_right = float('-inf')
+    sum_temp = 0
+    cross_end = mid + 1
+    for i in range(mid, end):
+        sum_temp = sum_temp + alist[i]
+        if sum_temp > sum_right:
+            sum_right = sum_temp
+            cross_end = i + 1
+    return cross_start, cross_end, sum_left + sum_right
+ 
+alist = input('Enter the list of numbers: ')
+alist = alist.split()
+alist = [int(x) for x in alist]
+start, end, maximum = find_max_subarray(alist, 0, len(alist))
+print('The maximum subarray starts at index {}, ends at index {}'
+      ' and has sum {}.'.format(start, end - 1, maximum))
+items=[x for x in raw_input().split(',')]
+items.sort()
+print ','.join(items)
+
+
+
+
+'''Write
+a Python program to calculate the LCM of two numbers. or 
+
+
+
+   Write a program to calculate the
+LCM of two numbers using Python '''
+
+print("Enter two number to find L.C.M:")
+num1=int(input())
+num2=int(input())
+n1=num1
+n2=num2
+while(num1!=num2):
+   if (num1 > num2):
+      num1 = num1 - num2
+   else:
+      num2= num2 - num1
+lcm=int((n1*n2)/num1)
+print("L.C.M is",lcm)
+
+arr=[]size = int(input("Enter the size of the array: "))print("Enter the Element of the array:")for i in range(0,size):    num = int(input())    arr.append(num)count=0print("All the inversions are:")for i in range(0,size-1):    for j in range(i+1, size):        if arr[i]>arr[j]:            print("(",arr[i],",",arr[j],")")            count+=1if count==0:     print("(0)")elif count==0:     print("\nNumber of Inversions is ",count)else:    print("\nNumber of Inversions are ",count)
+n=int(input("Enter a number:"))
+d={x:x*x for x in range(1,n+1)}
+print(d)
+a=str(input("Enter a string: "))
+print("Reverse of the string is: ")
+print(a[::-1])
+def count_paths(m, n, holes):
+    """Return number of paths from (0, 0) to (m, n) in an m x n grid.
+ 
+    holes is a list of tuples (x, y) where each tuple is a coordinate which is
+    blocked for a path.
+    """
+    paths = [[-1]*(m + 1) for _ in range(n + 1)]
+ 
+    if (0, 0) in holes:
+        paths[0][0] = 0
+    else:
+        paths[0][0] = 1
+ 
+    for x in range(1, n + 1):
+        if (x, 0) in holes:
+            paths[x][0] = 0
+        else:
+            paths[x][0] = paths[x - 1][0]
+ 
+    for y in range(1, m + 1):
+        if (0, y) in holes:
+            paths[0][y] = 0
+        else:
+            paths[0][y] = paths[0][y - 1]
+ 
+    for x in range(1, n + 1):
+        for y in range(1, m + 1):
+            if (x, y) in holes:
+                paths[x][y] = 0
+            else:
+                paths[x][y] = paths[x - 1][y] + paths[x][y - 1]
+ 
+    return paths[n][m]
+ 
+ 
+m, n = input('Enter m, n for the size of the m x n grid (m rows and n columns): ').split(',')
+m = int(m)
+n = int(n)
+print('Enter the coordinates of holes on each line (empty line to stop): ')
+holes = []
+while True:
+    hole = input('')
+    if not hole.strip():
+        break
+    hole = hole.split(',')
+    hole = (int(hole[0]), int(hole[1]))
+    holes.append(hole)
+ 
+count = count_paths(m, n, holes)
+print('Number of paths from (0, 0) to ({}, {}): {}.'.format(n, m, count))
+ 
+cm=int(input("Enter the height in centimeters:"))
+inches=0.394*cm
+feet=0.0328*cm
+print("The length in inches",round(inches,2))
+print("The length in feet",round(feet,2))
+
+import random
+print random.choice([i for i in range(201) if i%5==0 and i%7==0])
+
+
+
+
+a=str(input("Enter the name of the file with .txt extension:"))
+file2=open(a,'r')
+line=file2.readline()
+while(line!=""):
+    print(line)
+    line=file2.readline()
+file2.close()
+
+def EvenGenerator(n):
+    i=0
+    while i<=n:
+        if i%2==0:
+            yield i
+        i+=1
+
+
+n=int(raw_input())
+values = []
+for i in EvenGenerator(n):
+    values.append(str(i))
+
+print ",".join(values)
+
+
+
+Solution
+def printValue(s1,s2):
+	print int(s1)+int(s2)
+
+printValue("3","4") #7
+
+
+
+
+li = [12,24,35,70,88,120,155]
+li = [x for (i,x) in enumerate(li) if i not in (0,4,5)]
+print li
+
+
+
+
+row_size=int(input("Enter the row size:"))np=row_size*2-1for out in range(row_size-1,-1,-1):    for inn in range(row_size,out,-1):        print(" ",end="")    for p in range(0,np):        print((chr)(out+65),end="")    np-=2    print("\r")
+
+expression = raw_input()
+print eval(expression)
+
+
+
+
+str=input("Enter the String:")
+for i in range(len(str)):
+    if str[i] == 'a' or str[i] == 'A' or str[i] == 'e' or str[i] == 'E' or str[i] == 'i'or str[i] == 'I' or str[i] == 'o' or str[i] == 'O' or str[i] == 'u' or str[i] == 'U':
+        print(str[i],end=" ")
+a=[]
+c=[]
+n1=int(input("Enter number of elements:"))
+for i in range(1,n1+1):
+    b=int(input("Enter element:"))
+    a.append(b)
+n2=int(input("Enter number of elements:"))
+for i in range(1,n2+1):
+    d=int(input("Enter element:"))
+    c.append(d)
+new=a+c
+new.sort()
+print("Sorted list is:",new)
+arr=[]size = int(input("Enter the size of the array: "))print("Enter the Element of the array:")for i in range(0,size):    num = int(input())    arr.append(num)Maximum_Sum=0for i in range(0,size):    for j in range(i, size):        sum=0        for p in range(i, j):            sum+=arr[p]        if sum>=Maximum_Sum:             Maximum_Sum=sumprint("Maximum sum of Contiguous Subarray is ",Maximum_Sum)
+a=[]
+l=int(input("Enter lower limit: "))
+u=int(input("Enter upper limit: "))
+a=[x for x in range(l,u+1) if x%2!=0 and str(x)==str(x)[::-1]]
+print("The numbers are: ",a)
+
+print("Enter the range of number(Limit):")
+n=int(input())
+i=1
+while(i<=n):
+    print(i*i*i,end=" ")
+    i+=1
+def merge_sort(alist, start, end):
+    '''Sorts the list from indexes start to end - 1 inclusive.'''
+    if end - start > 1:
+        mid = (start + end)//2
+        merge_sort(alist, start, mid)
+        merge_sort(alist, mid, end)
+        merge_list(alist, start, mid, end)
+ 
+def merge_list(alist, start, mid, end):
+    left = alist[start:mid]
+    right = alist[mid:end]
+    k = start
+    i = 0
+    j = 0
+    while (start + i < mid and mid + j < end):
+        if (left[i] <= right[j]):
+            alist[k] = left[i]
+            i = i + 1
+        else:
+            alist[k] = right[j]
+            j = j + 1
+        k = k + 1
+    if start + i < mid:
+        while k < end:
+            alist[k] = left[i]
+            i = i + 1
+            k = k + 1
+    else:
+        while k < end:
+            alist[k] = right[j]
+            j = j + 1
+            k = k + 1
+ 
+ 
+alist = input('Enter the list of numbers: ').split()
+alist = [int(x) for x in alist]
+merge_sort(alist, 0, len(alist))
+print('Sorted list: ', end='')
+print(alist)
+
+str=input("Enter the String:")
+print("After Reversing String is :")
+for i in range(len(str)-1,-1,-1):
+    print(str[i],end="")
+Solution
+squaredNumbers = map(lambda x: x**2, range(1,21))
+print squaredNumbers
+
+
+
+
+
+
+
+print("Enter the range of number:")
+n=int(input())
+sum=0
+for i in range(1,n+1):
+    sum+=i*i
+print("The sum of the series = ",sum)
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+# Compute transpose of two matrices
+tran_matrix=[[0 for i in range(col_size)] for i in range(row_size)]
+for i in range(0,row_size):
+    for j in range(0,col_size):
+        tran_matrix[i][j]=matrix[j][i]
+
+# display transpose of the matrix
+print("Transpose of the Given Matrix is:")
+for m in tran_matrix:
+    print(m)
+
+print("Enter 3 numbers:")
+num1=int(input())
+num2=int(input())
+num3=int(input())
+
+print("The biggest number is ",max(num1,num2,num3))
+
+
+ 
+n=int(input("Enter the number:"))
+tmp=n
+k=0
+while(n>0):
+    k=k+1
+    n=n//10
+b=str(tmp)
+c=str(k)
+d=c+b[k-1]
+print("The new number formed:",int(d))
+Solution
+def printList():
+	li=list()
+	for i in range(1,21):
+		li.append(i**2)
+	print li
+		
+
+printList()
+
+
+def Multiplication(num1,num2):    if num1<num2:        return Multiplication(num2, num1)    elif num2!=0:        return num1 + Multiplication(num1, num2 - 1)    else:        return 0print("Enter the two Number:")num1=int(input())num2=int(input())print("Multiplication of Two Number Using Recursion is: ",Multiplication(num1,num2))
+
+n=int(input("Enter the n value:"))
+fact=1
+for i in range(1,n+1):
+    fact*=i
+result=1.0/fact
+print("1/n!= ",result)
+
+
+row_size=int(input("Enter the row size:"))
+for out in range(row_size,-(row_size-1),-1):
+    for i in range((row_size),abs(out-1),-1):
+        print("*",end="")
+    print("\r")
+
+
+class InputOutString(object):
+    def __init__(self):
+        self.s = ""
+
+    def getString(self):
+        self.s = raw_input()
+
+    def printString(self):
+        print self.s.upper()
+
+strObj = InputOutString()
+strObj.getString()
+strObj.printString()
+
+count=0def count_digit(num):    global count    if (num != 0):        count +=1        count_digit(num // 10)    return countn=int(input("Enter a number:"))print("The number of digits in the Given Number is ",count_digit(n))
+row_size=int(input("Enter the row size:"))print_control_x=row_size//2+1for out in range(1,row_size+1):    for inn in range(1,row_size+1):        if (inn==1 or inn==row_size) or (out==1 or out==row_size):            print("*",end="")        else:            print(" ", end="")    print("\r")
+
+str=input("Enter the 1st String:")
+str2=input("Enter the 2nd String:")
+if len(str) != len(str2):
+    print("Strings are not an Anagrams.")
+else:
+    count = 0
+    str3=''.join(sorted(str))
+    str4=''.join(sorted(str2))
+    for i in range(len(str)):
+        if str3[i] != str4[i]:
+            count=1
+    if count == 1:
+        print("Input strings are not an anagram")
+    else:
+        print("Input strings are an anagram")
+def introsort(alist):
+    maxdepth = (len(alist).bit_length() - 1)*2
+    introsort_helper(alist, 0, len(alist), maxdepth)
+ 
+def introsort_helper(alist, start, end, maxdepth):
+    if end - start <= 1:
+        return
+    elif maxdepth == 0:
+        heapsort(alist, start, end)
+    else:
+        p = partition(alist, start, end)
+        introsort_helper(alist, start, p + 1, maxdepth - 1)
+        introsort_helper(alist, p + 1, end, maxdepth - 1)
+ 
+def partition(alist, start, end):
+    pivot = alist[start]
+    i = start - 1
+    j = end
+ 
+    while True:
+        i = i + 1
+        while alist[i] < pivot:
+            i = i + 1
+        j = j - 1
+        while alist[j] > pivot:
+            j = j - 1
+ 
+        if i >= j:
+            return j
+ 
+        swap(alist, i, j)
+ 
+def swap(alist, i, j):
+    alist[i], alist[j] = alist[j], alist[i]
+ 
+def heapsort(alist, start, end):
+    build_max_heap(alist, start, end)
+    for i in range(end - 1, start, -1):
+        swap(alist, start, i)
+        max_heapify(alist, index=0, start=start, end=i)
+ 
+def build_max_heap(alist, start, end):
+    def parent(i):
+        return (i - 1)//2
+    length = end - start
+    index = parent(length - 1)
+    while index >= 0:
+        max_heapify(alist, index, start, end)
+        index = index - 1
+ 
+def max_heapify(alist, index, start, end):
+    def left(i):
+        return 2*i + 1
+    def right(i):
+        return 2*i + 2
+ 
+    size = end - start
+    l = left(index)
+    r = right(index)
+    if (l < size and alist[start + l] > alist[start + index]):
+        largest = l
+    else:
+        largest = index
+    if (r < size and alist[start + r] > alist[start + largest]):
+        largest = r
+    if largest != index:
+        swap(alist, start + largest, start + index)
+        max_heapify(alist, largest, start, end)
+ 
+ 
+alist = input('Enter the list of numbers: ').split()
+alist = [int(x) for x in alist]
+introsort(alist)
+print('Sorted list: ', end='')
+print(alist)
+a=[]
+n=int(input("Enter number of elements:"))
+for i in range(1,n+1):
+    b=int(input("Enter element:"))
+    a.append(b)
+k=0
+num=int(input("Enter the number to be counted:"))
+for j in a:
+    if(j==num):
+        k=k+1
+print("Number of times",num,"appears is",k)
+
+import math
+print("Enter range:")
+range1=int(input())
+range2=int(input())
+print("Perfect squares between ",range1," and ",range2," are: ")
+for i in range(range1,range2+1):
+    sqr=math.sqrt(i)
+    if sqr-math.floor(sqr)==0:
+        print(i,end=" ") 
+
+import sysdef FindMax(arr,n):    if n == 1:        return arr[0]    return max(arr[n - 1], FindMax(arr, n - 1))def FindMin(arr,n):    if n==1:        return arr[0]    return min(arr[n-1], FindMin(arr, n-1))arr=[]n = int(input("Enter the size of the array: "))print("Enter the Element of the array:")for i in range(0,n):    num = int(input())    arr.append(num)print("Maximum Element of the array is: ",FindMax(arr,len(arr)))print("Minimum Element of the array is: ",FindMin(arr,len(arr)))
+
+
+print("Enter the row and column size:");
+row_size=input()
+for out in range(ord(row_size),ord('A')-1,-1):
+    for i in range(ord(row_size),ord('A')-1,-1):
+        print(chr(i),end=" ")
+    print("\r")
+
+
+str=input("Enter the String:")
+j=0
+newStr=""
+for i in range(len(str)):
+    if i==0 or str[i-1]==' ':
+        ch=str[i].upper()
+        newStr+=ch
+    else:
+        newStr = newStr + str[i]
+print("Your String is:", newStr)
+import math
+print("Enter the coefficients of the form ax^3 + bx^2 + cx + d")
+lst=[]
+for i in range(0,4):
+    a=int(input("Enter coefficient:"))
+    lst.append(a)
+x=int(input("Enter the value of x:"))
+sum1=0
+j=3
+for i in range(0,3):
+    while(j>0):
+        sum1=sum1+(lst[i]*math.pow(x,j))
+        break
+    j=j-1
+sum1=sum1+lst[3]
+print("The value of the polynomial is:",sum1)
+Solution
+s= raw_input()
+if s=="yes" or s=="YES" or s=="Yes":
+    print "Yes"
+else:
+    print "No"
+
+
+
+
+
+str=input("Enter the String(Upper case):")
+print("Lower case String is:", str.lower())
+
+print("Enter the row size:")
+row_size=int(input())
+for out in range(row_size+1):
+    for j in range(out):
+        print(" ",end="")
+    for p in range(row_size,out,-1):
+        print("* ",end="")
+    print("\r")
+class BinaryTree:
+    def __init__(self, key=None):
+        self.key = key
+        self.left = None
+        self.right = None
+ 
+    def set_root(self, key):
+        self.key = key
+ 
+    def inorder(self):
+        if self.left is not None:
+            self.left.inorder()
+        print(self.key, end=' ')
+        if self.right is not None:
+            self.right.inorder()
+ 
+    def insert_left(self, new_node):
+        self.left = new_node
+ 
+    def insert_right(self, new_node):
+        self.right = new_node
+ 
+    def search(self, key):
+        if self.key == key:
+            return self
+        if self.left is not None:
+            temp =  self.left.search(key)
+            if temp is not None:
+                return temp
+        if self.right is not None:
+            temp =  self.right.search(key)
+            return temp
+        return None
+ 
+ 
+def sum_nodes(node):
+    if node is None:
+        return 0
+    return node.key + sum_nodes(node.left) + sum_nodes(node.right)
+ 
+ 
+btree = None
+ 
+print('Menu (this assumes no duplicate keys)')
+print('insert <data> at root')
+print('insert <data> left of <data>')
+print('insert <data> right of <data>')
+print('sum')
+print('quit')
+ 
+while True:
+    print('inorder traversal of binary tree: ', end='')
+    if btree is not None:
+        btree.inorder()
+    print()
+ 
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'insert':
+        data = int(do[1])
+        new_node = BinaryTree(data)
+        suboperation = do[2].strip().lower() 
+        if suboperation == 'at':
+                btree = new_node
+        else:
+            position = do[4].strip().lower()
+            key = int(position)
+            ref_node = None
+            if btree is not None:
+                ref_node = btree.search(key)
+            if ref_node is None:
+                print('No such key.')
+                continue
+            if suboperation == 'left':
+                ref_node.insert_left(new_node)
+            elif suboperation == 'right':
+                ref_node.insert_right(new_node)
+ 
+    elif operation == 'sum':
+        print('Sum of nodes in tree: {}'.format(sum_nodes(btree)))
+ 
+    elif operation == 'quit':
+        break
+sum=0def SumOfEvenElement(arr,n):    global sum    if(n>0):        i=n-1        if(arr[i]%2==0):            sum=sum+arr[i]        SumOfEvenElement(arr,i)    return sumarr=[]n = int(input("Enter the size of the array: "))print("Enter the Element of the array:")for i in range(0,n):    num = int(input())    arr.append(num)print("Sum of even Element is:",SumOfEvenElement(arr,n))
+
+s = raw_input()
+u = unicode( s ,"utf-8")
+print u
+
+
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+#Calculate sum of lower triangular matrix element
+sum=0
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        if i<j:
+            sum += matrix[i][j]
+
+# display the sum of a lower triangular matrix element
+print("Sum of Lower Triangular Matrix Elements is: ",sum)
+
+row_size=int(input("Enter the row size:"))
+for out in range(row_size,0,-1):
+    for in1 in range(row_size,out,-1):
+        print(" ",end="")
+    for in2 in range(1, out+1):
+        print(in2,end="")
+    print("\r")
+
+def Find_median(arr,arr2,size,size2):    m_size = size + size2    merge_arr = [0]*m_size    i=0    k=0    j=0    while k<m_size:       if i<size:           merge_arr[k] = arr[i]           i+=1           k+=1       if j<size2:           merge_arr[k] = arr2[j]           j+=1           k+=1    merge_arr.sort()    if size % 2 == 1:        median = merge_arr[size // 2]        print("\nMedian= ", median)    else:        median = (merge_arr[m_size // 2] + (merge_arr[(m_size // 2) - 1])) / 2.0        print("\nMedian= ", median)arr=[]arr2=[]size = int(input("Enter the size of the 1st array: "))size2 = int(input("Enter the size of the 2nd array: "))print("Enter the Element of the 1st array:")for i in range(0,size):    num = int(input())    arr.append(num)print("Enter the Element of the 2nd array:")for i in range(0,size2):    num2 = int(input())    arr2.append(num2)Find_median(arr,arr2,size,size2)
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the 1st matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+matrix1=[]
+# Taking input of the 2nd matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix1.append([int(j) for j in input().split()])
+
+sum=0
+# Compute Multiplication of two matrices
+mul_matrix=[[0 for i in range(col_size)] for i in range(row_size)]
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        for k in range(row_size):
+            sum+=matrix[i][j]*matrix1[i][j]
+        mul_matrix[i][j]=sum
+
+# display the Multiplication of two matrices
+print("Multiplication of the two Matrices is:")
+for m in mul_matrix:
+    print(m)
+ 
+for i in range(0,51):
+    if(i%2!=0&i%3!=0):
+        print(i)
+radius=int(input("Enter radius of a sphere :"))
+
+surfaceArea=4*3.14*radius*radius
+volume=(4/3)*3.14*radius*radius*radius
+
+print("Surface Area of the sphere =",surfaceArea)
+print("Volume of the sphere =",volume)
+
+print("Enter a range:")
+range1=int(input())
+range2=int(input())
+print("Neon numbers between ",range1," and ",range2," are: ")
+for i in range(range1,range2+1):
+    sqr =i*i
+    # Sum of digit
+    sum = 0
+    while sqr != 0:
+        rem = sqr % 10
+        sum += rem
+        sqr //= 10
+
+    if sum == i:
+        print(i,end=" ")
+
+str=input("Enter the String:")
+ch=' '
+for i in range(len(str)):
+    if str[i] >= 'A' and str[i] <= 'Z':
+        ch = str[i]
+        break
+    else:
+        continue
+print("First capital letter in a given String is: ", ch)
+
+str=input("Enter the String(Lower case):")
+i=0
+ch=''
+#convert capital letter string to small letter string
+while len(str)>i:
+    if str[i]>='a' and str[i]<='z' :
+        ch+=chr(ord(str[i])-32)
+    else:
+        ch += chr(ord(str[i]))
+    i+=1
+print("Lower case String is:", ch)
+
+import math
+print("Enter a range:")
+range1=int(input())
+range2=int(input())
+print("Pronic numbers between ",range1," and ",range2," are: ")
+for i in range(range1,range2+1):
+    flag = 0
+    for j in range(0, i + 1):
+        if j * (j + 1) == i:
+            flag = 1
+            break
+    if flag == 1:
+        print(i,end=" ")
+class Node:
+    def __init__(self, data):
+       self.data = data
+       self.next = None
+ 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.last_node = None
+ 
+    def append(self, data):
+        if self.last_node is None:
+            self.head = Node(data)
+            self.last_node = self.head
+        else:
+            self.last_node.next = Node(data)
+            self.last_node = self.last_node.next
+ 
+    def display_reversed(self):
+        self.display_reversed_helper(self.head)
+ 
+    def display_reversed_helper(self, current):
+        if current is None:
+            return
+ 
+        self.display_reversed_helper(current.next)
+        print(current.data, end = ' ')
+ 
+a_llist = LinkedList()
+n = int(input('How many elements would you like to add? '))
+for i in range(n):
+    data = int(input('Enter data item: '))
+    a_llist.append(data)
+ 
+print('The reversed linked list: ', end = '')
+a_llist.display_reversed()
+string=raw_input("Enter string:")
+if(string==string[::-1]):
+      print("The string is a palindrome")
+else:
+      print("The string isn't a palindrome")
+
+print("Enter a range:")
+range1=int(input())
+range2=int(input())
+print("Evil numbers between ",range1," and ",range2," are: ")
+for i in range(range1,range2+1):
+    one_c = 0
+    num=i
+    while num != 0:
+        if num % 2 == 1:
+            one_c += 1
+        num //= 2
+    if one_c % 2 == 0:
+        print(i,end=" ")
+
+rangenumber=int(input("Enter a Nth Number:"))
+c = 0
+letest = 0
+num = 1
+while c != rangenumber:
+    num1 = num
+    sum = 0
+    for i in range(1, num1):
+        if num1 % i == 0:
+            sum = sum + i
+    if sum>num:
+        c+=1
+        letest = num
+
+    num = num + 1
+print(rangenumber,"th Abundant number is ",letest)
+class Dequeue:
+    def __init__(self):
+        self.items = []
+ 
+    def is_empty(self):
+        return self.items == []
+ 
+    def append(self, data):
+        self.items.append(data)
+ 
+    def append_left(self, data):
+        self.items.insert(0, data)
+ 
+    def pop(self):
+        return self.items.pop()
+ 
+    def pop_left(self):
+        return self.items.pop(0)
+ 
+ 
+q = Dequeue()
+print('Menu')
+print('append <value>')
+print('appendleft <value>')
+print('pop')
+print('popleft')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'append':
+        q.append(int(do[1]))
+    elif operation == 'appendleft':
+        q.append_left(int(do[1]))
+    elif operation == 'pop':
+        if q.is_empty():
+            print('Dequeue is empty.')
+        else:
+            print('Popped value from right: ', q.pop())
+    elif operation == 'popleft':
+        if q.is_empty():
+            print('Dequeue is empty.')
+        else:
+            print('Popped value from left: ', q.pop_left())
+    elif operation == 'quit':
+        break
+
+
+
+'''Write
+a Python program to check whether a given number is An Automorphic
+number or not. or Write a program to check whether
+a given number is An Automorphic number or not using Python '''
+
+num=int(input("Enter a number:"))
+sqr=num*num
+flag=0
+while num!=0:
+    if(num%10 != sqr%10):
+       flag=-1
+       break
+    num=int(num/10)
+    sqr=int(sqr/10)
+if(flag==0):
+   print("It is an Automorphic Number")
+else:
+   print("It is not an Automorphic Number")
+
+
+def Merge_Array(arr,arr2,size,size2):    m_size = size + size2    merge_arr = [0]*m_size    i=0    k=0    j=0    while k<m_size:       if i<size:           merge_arr[k] = arr[i]           i+=1           k+=1       if j<size2:           merge_arr[k] = arr2[j]           j+=1           k+=1    print("After Merge two Array element are:")    for p in range(0, m_size):        print(merge_arr[p],end=" ")arr=[]arr2=[]size = int(input("Enter the size of the 1st array: "))size2 = int(input("Enter the size of the 2nd array: "))print("Enter the Element of the 1st array:")for i in range(0,size):    num = int(input())    arr.append(num)print("Enter the Element of the 2nd array:")for i in range(0,size2):    num2 = int(input())    arr2.append(num2)Merge_Array(arr,arr2,size,size2)
+n=int(input("Enter number of rows: "))
+a=[]
+for i in range(n):
+    a.append([])
+    a[i].append(1)
+    for j in range(1,i):
+        a[i].append(a[i-1][j-1]+a[i-1][j])
+    if(n!=0):
+        a[i].append(1)
+for i in range(n):
+    print("   "*(n-i),end=" ",sep=" ")
+    for j in range(0,i+1):
+        print('{0:6}'.format(a[i][j]),end=" ",sep=" ")
+    print()
+l=[]
+def sum_digits(b):
+    if(b==0):
+        return l
+    dig=b%10
+    l.append(dig)
+    sum_digits(b//10)
+n=int(input("Enter a number: "))
+sum_digits(n)
+print(sum(l))
+
+
+
+'num=int(input("Enter a number:"))
+num2=num
+sum=0
+while(num!=0):
+   rem=num%10
+   num=int(num/10)
+   sum=sum+rem*rem*rem
+if sum==num2:
+   print("It is an Armstrong Number")
+else:
+   print("It is not an Armstrong Number")
+
+
+
+
+class Node:
+    def __init__(self, data):
+       self.data = data
+       self.next = None
+       self.prev = None
+ 
+ 
+class CircularDoublyLinkedList:
+    def __init__(self):
+        self.first = None
+ 
+    def get_node(self, index):
+        current = self.first
+        for i in range(index):
+            current = current.next
+            if current == self.first:
+                return None
+        return current
+ 
+    def insert_after(self, ref_node, new_node):
+        new_node.prev = ref_node
+        new_node.next = ref_node.next
+        new_node.next.prev = new_node
+        ref_node.next = new_node
+ 
+    def insert_before(self, ref_node, new_node):
+        self.insert_after(ref_node.prev, new_node)
+ 
+    def insert_at_end(self, new_node):
+        if self.first is None:
+            self.first = new_node
+            new_node.next = new_node
+            new_node.prev = new_node
+        else:
+            self.insert_after(self.first.prev, new_node)
+ 
+    def insert_at_beg(self, new_node):
+        self.insert_at_end(new_node)
+        self.first = new_node
+ 
+    def remove(self, node):
+        if self.first.next == self.first:
+            self.first = None
+        else:
+            node.prev.next = node.next
+            node.next.prev = node.prev
+            if self.first == node:
+                self.first = node.next
+ 
+    def display(self):
+        if self.first is None:
+            return
+        current = self.first
+        while True:
+            print(current.data, end = ' ')
+            current = current.next
+            if current == self.first:
+                break
+ 
+ 
+a_cdllist = CircularDoublyLinkedList()
+ 
+print('Menu')
+print('insert <data> after <index>')
+print('insert <data> before <index>')
+print('insert <data> at beg')
+print('insert <data> at end')
+print('remove <index>') 
+print('quit')
+ 
+while True:
+    print('The list: ', end = '')
+    a_cdllist.display()
+    print()
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+ 
+    if operation == 'insert':
+        data = int(do[1])
+        position = do[3].strip().lower()
+        new_node = Node(data)
+        suboperation = do[2].strip().lower() 
+        if suboperation == 'at':
+            if position == 'beg':
+                a_cdllist.insert_at_beg(new_node)
+            elif position == 'end':
+                a_cdllist.insert_at_end(new_node)
+        else:
+            index = int(position)
+            ref_node = a_cdllist.get_node(index)
+            if ref_node is None:
+                print('No such index.')
+                continue
+            if suboperation == 'after':
+                a_cdllist.insert_after(ref_node, new_node)
+            elif suboperation == 'before':
+                a_cdllist.insert_before(ref_node, new_node)
+ 
+    elif operation == 'remove':
+        index = int(do[1])
+        node = a_cdllist.get_node(index)
+        if node is None:
+            print('No such index.')
+            continue
+        a_cdllist.remove(node)
+ 
+    elif operation == 'quit':
+        break
+with open("test.txt") as f:
+    with open("out.txt", "w") as f1:
+        for line in f:
+            f1.write(line)
+
+
+'''Write a Python
+program to add between 2 numbers without using arithmetic operators.
+or Write a program to add between 2 numbers without using
+arithmetic operators using Python '''
+
+print("Enter first number:")
+num1=int(input())
+print("Enter  second number:")
+num2=int(input())
+while num2 != 0:
+       carry= num1 & num2
+       num1= num1 ^ num2
+       num2=carry << 1
+print("Addition of two number is ",num1) 
+
+
+
+'''Write
+a Python program to the sum of all digits of a number. or 
+
+   Write a program to the sum of all
+digits of a number using Python '''
+
+n=int(input("Enter a number:"))
+sum=0
+while n>0:
+   rem=n%10
+   sum=sum+rem
+   n=int(n/10)
+
+print("The sum of digits of number is:", sum) 
+
+n=int(input("Enter the number of terms:"))
+x=int(input("Enter the value of x:"))
+sum1=1
+for i in range(2,n+1):
+    sum1=sum1+((x**i)/i)
+print("The sum of series is",round(sum1,2))
+
+
+l=int(input("Enter the length of the cuboid:"))
+h=int(input("Enter the height of the cuboid:"))
+w=int(input("Enter the weight of the cuboid:"))
+surface_area=2*((l*w)+(l*h)+(h*w))
+volume=l*w*h
+print("Surface Area of the cuboid = ",surface_area)
+print("Volume of the cuboid = ",volume)
+
+
+str=input("Enter the String:")
+arr=[0]*256
+for i in range(len(str)):
+    if str[i]==' ':
+        continue
+    num=ord(str[i])
+    arr[num]+=1
+print("Frequency of character in a string are:")
+for i in range(256):
+    if arr[i]!=0:
+        print((chr)(i)," occurs ",arr[i]," times")
+n=int(input("Enter the range of number:"))sum=0.0fact=1for i in range(1,n+1):    fact *= i    sum+=1.0/factprint("The sum of the series = ",sum)
+
+def reverse(num):
+    if num<10:
+      print(num)
+      return
+    else:
+        print(num % 10,end="")
+        reverse(int(num / 10))
+print("Enter your number:")
+num=int(input())
+print("Reverse of the input number is:")
+reverse(num) 
+
+s1=raw_input("Enter first string:")
+s2=raw_input("Enter second string:")
+a=list(set(s1)^set(s2))
+print("The letters are:")
+for i in a:
+    print(i)
+n=int(input("Enter the range of number:"))sum=0.0for i in range(1,n+1):    sum += i / (i + 1)print("The sum of the series = ",sum)
+import math
+def sin(x,n):
+    sine = 0
+    for i in range(n):
+        sign = (-1)**i
+        pi=22/7
+        y=x*(pi/180)
+        sine = sine + ((y**(2.0*i+1))/math.factorial(2*i+1))*sign
+    return sine
+x=int(input("Enter the value of x in degrees:"))
+n=int(input("Enter the number of terms:"))
+print(round(sin(x,n),2))
+l_range=int(input("Enter the lower range:"))
+u_range=int(input("Enter the upper range:"))
+a=[(x,x**2) for x in range(l_range,u_range+1)]
+print(a)
+def clear_rightmost_set_bit(n):
+    """Clear rightmost set bit of n and return it."""
+    return n & (n - 1)
+ 
+ 
+n = int(input('Enter a number: '))
+ans = clear_rightmost_set_bit(n)
+print('n with its rightmost set bit cleared equals:', ans)
+
+import array
+arr=array.array('u', ['c','s','i','n','f','o','3','6','0','.','c','o','m'])
+len=len(arr)
+for i in range(0,len):
+    print(arr[i],end="")
+
+
+
+'''Write
+a Python program to check whether a given number is a Harshad number or
+not. or Write a program to check whether
+a given number is a Harshad number or not
+using Python '''
+
+
+
+num=int(input("Enter a number:"))
+num2=num
+sum=0
+while num!=0:
+  rem=num%10
+  num=int(num/10)
+  sum=sum+rem
+if(num2%sum==0):
+   print("It is a Harshad Number")
+else:
+print("It is not a Harshad Number") 
+
+
+arr=[]
+temp=0
+pos=0
+size = int(input("Enter the size of the array: "))
+print("Enter the Element of the array:")
+for i in range(0,size):
+    num = int(input())
+    arr.append(num)
+print("Enter the element to be deleted:")
+ele=int(input())
+print("Before deleting array elements are:")
+for i in range(0,size):
+    print(arr[i],end=" ")
+for i in range(0,size):
+    if arr[i] == ele:
+            pos = i
+            temp = 1
+
+if temp==1:
+    arr.pop(pos)
+print("\nAfter deleting array elements are:")
+print(arr)
+print abs.__doc__
+print int.__doc__
+print raw_input.__doc__
+
+def square(num):
+    '''Return the square value of the input number.
+    
+    The input number must be integer.
+    '''
+    return num ** 2
+
+print square(2)
+print square.__doc__
+
+class BinaryHeap:
+    def __init__(self):
+        self.items = []
+ 
+    def size(self):
+        return len(self.items)
+ 
+    def parent(self, i):
+        return (i - 1)//2
+ 
+    def left(self, i):
+        return 2*i + 1
+ 
+    def right(self, i):
+        return 2*i + 2
+ 
+    def get(self, i):
+        return self.items[i]
+ 
+    def get_max(self):
+        if self.size() == 0:
+            return None
+        return self.items[0]
+ 
+    def extract_max(self):
+        if self.size() == 0:
+            return None
+        largest = self.get_max()
+        self.items[0] = self.items[-1]
+        del self.items[-1]
+        self.max_heapify(0)
+        return largest
+ 
+    def max_heapify(self, i):
+        l = self.left(i)
+        r = self.right(i)
+        if (l <= self.size() - 1 and self.get(l) > self.get(i)):
+            largest = l
+        else:
+            largest = i
+        if (r <= self.size() - 1 and self.get(r) > self.get(largest)):
+            largest = r
+        if (largest != i):
+            self.swap(largest, i)
+            self.max_heapify(largest)
+ 
+    def swap(self, i, j):
+        self.items[i], self.items[j] = self.items[j], self.items[i]
+ 
+    def insert(self, key):
+        index = self.size()
+        self.items.append(key)
+ 
+        while (index != 0):
+            p = self.parent(index)
+            if self.get(p) < self.get(index):
+                self.swap(p, index)
+            index = p
+ 
+ 
+bheap = BinaryHeap()
+ 
+print('Menu')
+print('insert <data>')
+print('max get')
+print('max extract')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'insert':
+        data = int(do[1])
+        bheap.insert(data)
+    elif operation == 'max':
+        suboperation = do[1].strip().lower()
+        if suboperation == 'get':
+            print('Maximum value: {}'.format(bheap.get_max()))
+        elif suboperation == 'extract':
+            print('Maximum value removed: {}'.format(bheap.extract_max()))
+ 
+    elif operation == 'quit':
+        break
+n=int(input("Enter the range of number:"))sum=0i=0while i<=n:    sum+=i    i+=2print("The sum of the series = ",sum)
+def lcm(a,b):
+    lcm.multiple=lcm.multiple+b
+    if((lcm.multiple % a == 0) and (lcm.multiple % b == 0)):
+        return lcm.multiple;
+    else:
+        lcm(a, b)
+    return lcm.multiple
+lcm.multiple=0
+a=int(input("Enter first number:"))
+b=int(input("Enter second number:"))
+if(a>b):
+    LCM=lcm(b,a)
+else:
+    LCM=lcm(a,b)
+print(LCM)
+# Get size of matrixrow_size=int(input("Enter the row Size Of the Matrix:"))col_size=int(input("Enter the columns Size Of the Matrix:"))matrix=[]# Taking input of the matrixprint("Enter the Matrix Element:")for i in range(row_size):    matrix.append([int(j) for j in input().split()])# display the Matrixprint("Given Matrix is:")for m in matrix:    print(m)
+
+arr=[]
+odd_type=0
+even_type=0
+size = int(input("Enter the size of the array: "))
+print("Enter the Element of the array:")
+for i in range(0,size):
+    num = int(input())
+    arr.append(num)
+print("Array elements are:")
+for i in range(0,size):
+    print(arr[i],end=" ")
+for i in range(0,size):
+    if arr[i] % 2 == 0:
+        even_type +=1
+    else:
+        odd_type +=1
+if even_type==size:
+        print("\nEven type array")
+elif odd_type==size:
+        print("\nodd type array")
+else:
+        print("\nMixed array")
+
+
+'''Write a Python
+program to find out all Harshad numbers present within a given range.
+or Write a program to find out all Harshad numbers present
+within a given range using Python '''
+
+
+print("Enter a range:")
+range1=int(input())
+range2=int(input())
+print("Harshad numbers between ",range1," and ",range2," are: ")
+for i in range(range1,range2+1):
+    num2=i
+    num=i
+    sum=0
+    while num!=0:
+        rem=num%10
+        num=int(num/10)
+        sum=sum+rem
+    if(num2%sum==0):
+        print(i,end=" ")
+
+def StringLength(str, i):    if (str[i] == '\0'):        return 0    else:        return (1 + StringLength(str, i + 1))str=input("Enter your String:")str+='\0'print("Length of the String is: ",StringLength(str,0))
+n=int(input("Enter the range of number(Limit):"))i=1pr=1while i<=n:    if(i%2==0):        print(-1*pr,end=" ")    else:        print(pr, end=" ")    pr+=pow(i,2)    i+=1
+
+
+import math
+print("Enter the length of the side:")
+a=int(input())
+area=(math.sqrt(5*(5+2*math.sqrt(5)))*pow(a,2))/4.0
+perimeter=(5*a)
+print("Area of the Pentagon = ",area)
+
+print("Perimeter of the Pentagon = ",perimeter)
+
+import math
+def cosine(x,n):
+    cosx = 1
+    sign = -1
+    for i in range(2, n, 2):
+        pi=22/7
+        y=x*(pi/180)
+        cosx = cosx + (sign*(y**i))/math.factorial(i)
+        sign = -sign
+    return cosx
+x=int(input("Enter the value of x in degrees:"))
+n=int(input("Enter the number of terms:"))
+print(round(cosine(x,n),2))
+
+import sys
+arr=[]
+size = int(input("Enter the size of the array: "))
+print("Enter the Element of the array:")
+for i in range(0,size):
+    num = int(input())
+    arr.append(num)
+min=sys.maxsize
+for j in range(0,size):
+    if (arr[j] <= min):
+        min = arr[j]
+
+print("The smallest element of array: ",min)
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+# Calculate sum of given matrix Elements
+sum=0
+for i in range(0,row_size):
+    for j in range(0,col_size):
+        sum+=matrix[i][j]
+
+# Display The Sum Of Given Matrix Elements
+print("Sum of the Given Matrix Elements is: ",sum)
+
+def solve(numheads,numlegs):
+    ns='No solutions!'
+    for i in range(numheads+1):
+        j=numheads-i
+        if 2*i+4*j==numlegs:
+            return i,j
+    return ns,ns
+
+numheads=35
+numlegs=94
+solutions=solve(numheads,numlegs)
+print solutions
+
+
+
+
+print("Enter the row and column size:");
+row_size=input()
+for out in range(ord(row_size),ord('A')-1,-1):
+    for i in range(ord(row_size),ord('A')-1,-1):
+        print(chr(i),end=" ")
+    print("\r")
+
+
+
+
+'''Write
+a Python program to check whether a given number is an Abundant number
+or not. or Write a program to check whether
+a given number is an Abundant number or not
+using Python '''
+
+
+
+num=int(input("Enter a number:"))
+sum=0
+for i in range(1,num):
+   if(num%i==0):
+      sum=sum+i
+if sum>num:
+   print("It is an Abundant Number")
+else:
+
+   print("It is not an Abundant Number")
+
+
+
+n=int(input("Enter the range of number:"))sum=0for i in range(1,n+1):    if i % 2 == 0:        sum -= i    else:        sum += iprint("The sum of the series = ",sum)
+a=[]
+n= int(input("Enter the number of elements in list:"))
+for x in range(0,n):
+    element=input("Enter element" + str(x+1) + ":")
+    a.append(element)
+max1=len(a[0])
+temp=a[0]
+for i in a:
+    if(len(i)>max1):
+       max1=len(i)
+       temp=i
+print("The word with the longest length is:")
+print(temp)
+
+arr=[]
+cout=0
+sum=0
+size = int(input("Enter the size of the array: "))
+print("Enter the Element of the array:")
+for i in range(0,size):
+    num = int(input())
+    arr.append(num)
+for j in range(1, size+1):
+    if (j % 2 == 0):
+        sum += arr[j]
+        cout+=1
+avg = (sum / cout)
+print("Average of Numbers in array at even position is ", avg)
+def PrintNaturalNumber(n):    if(n<=50):        print(n,end=" ")        PrintNaturalNumber(n + 1)n=1print("First 50 Natural Numbers are:")PrintNaturalNumber(n)
+
+import math
+num=int(input("Enter a number:"))
+num1 = num
+c=0
+while num1!=0:
+    num1 //= 10
+    c+=1
+num1=num
+sum=0
+while num1!=0:
+    rem = num1 % 10
+    sum += math.pow(rem, c)
+    num1 //= 10
+    c-=1
+if sum==num:
+    print("It is a Disarium Number.")
+else:
+   print("It is Not a Disarium Number.")
+def putNumbers(n):
+    i = 0
+    while i<n:
+        j=i
+        i=i+1
+        if j%7==0:
+            yield j
+
+for i in reverse(100):
+    print i
+
+keys=[]
+values=[]
+n=int(input("Enter number of elements for dictionary:"))
+print("For keys:")
+for x in range(0,n):
+    element=int(input("Enter element" + str(x+1) + ":"))
+    keys.append(element)
+print("For values:")
+for x in range(0,n):
+    element=int(input("Enter element" + str(x+1) + ":"))
+    values.append(element)
+d=dict(zip(keys,values))
+print("The dictionary is:")
+print(d)
+row_size=int(input("Enter the row size:"))print_control_x=row_size//2+1x=1for out in range(1,row_size+1):    for inn in range(1,row_size+1):        if inn==print_control_x or inn==row_size-print_control_x+1:            print(x,end="")        else:            print(" ", end="")    if out <= row_size // 2:        print_control_x-=1        x+=1    else:        print_control_x+=1        x-=1    print("\r")
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+#Calculate sum of Upper triangular matrix element
+sum=0
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        if i>j:
+            sum += matrix[i][j]
+
+# display the sum of the Upper triangular matrix element
+print("Sum of Upper Triangular Matrix Elements is: ",sum)
+ 
+n=int(input("Enter any number: "))
+a=list(map(int,str(n)))
+b=list(map(lambda x:x**3,a))
+if(sum(b)==n):
+    print("The number is an armstrong number. ")
+else:
+    print("The number isn't an arsmtrong number. ")
+a=int(input("Enter the first number of the series "))
+b=int(input("Enter the second number of the series "))
+n=int(input("Enter the number of terms needed "))
+print(a,b,end=" ")
+while(n-2):
+    c=a+b
+    a=b
+    b=c
+    print(c,end=" ")
+    n=n-1
+fname = input("Enter file name: ")
+file3=open(fname,"a")
+c=input("Enter string to append: \n");
+file3.write("\n")
+file3.write(c)
+file3.close()
+print("Contents of appended file:");
+file4=open(fname,'r')
+line1=file4.readline()
+while(line1!=""):
+    print(line1)
+    line1=file4.readline()    
+file4.close()
+
+str=input("Enter the String:")
+str2 = []
+i = 0
+while i < len(str):
+    ch = str[i]
+    if not ch.islower():
+        str2.append(ch)
+    i += 1
+Final_String = ''.join(str2)
+print("After removing lowercase letter string is:",Final_String)
+
+import math
+print("Enter a range to find all prime numbers within that range:")
+range1=int(input())
+range2=int(input())
+print("Prime numbers between ",range1," and ",range2," are: ")
+for j in range(range1,range2+1): 
+     count=0 for i in range(2,int(math.sqrt(j))+1): 
+     if j%i==0: 
+       count+=1
+if count==0: 
+print(j,end=" ")
+
+s1=raw_input("Enter first string:")
+s2=raw_input("Enter second string:")
+a=list(set(s1)&set(s2))
+print("The common letters are:")
+for i in a:
+    print(i)
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+ 
+ 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.last_node = None
+ 
+    def append(self, data):
+        if self.last_node is None:
+            self.head = Node(data)
+            self.last_node = self.head
+        else:
+            self.last_node.next = Node(data)
+            self.last_node = self.last_node.next
+ 
+ 
+def length_llist(llist):
+    length = 0
+    current = llist.head
+    while current:
+        current = current.next
+        length = length + 1
+    return length
+ 
+ 
+def return_n_from_last(llist, n):
+    l = length_llist(llist)
+    current = llist.head
+    for i in range(l - n):
+        current = current.next
+    return current.data
+ 
+ 
+a_llist = LinkedList()
+ 
+data_list = input('Please enter the elements in the linked list: ').split()
+for data in data_list:
+    a_llist.append(int(data))
+ 
+n = int(input('The nth element from the end will be printed. Please enter n: '))
+value = return_n_from_last(a_llist, n)
+ 
+print('The nth element from the end: {}'.format(value))
+
+t_sec=int(input("Enter the total Second:"))
+hour=(int)(t_sec/3600)
+t_sec=(int)(t_sec%3600)
+mint=(int)(t_sec/60)
+sec=(int)(t_sec%60)
+print("Hours=",hour,"\nMinutes=",mint,"\nSecond=",sec)
+class Tree:
+    def __init__(self, data=None):
+        self.key = data
+        self.children = []
+ 
+    def set_root(self, data):
+        self.key = data
+ 
+    def add(self, node):
+        self.children.append(node)
+ 
+    def search(self, key):
+        if self.key == key:
+            return self
+        for child in self.children:
+            temp = child.search(key)
+            if temp is not None:
+                return temp
+        return None
+ 
+    def bfs(self):
+        queue = [self]
+        while queue != []:
+            popped = queue.pop(0)
+            for child in popped.children:
+                queue.append(child)
+            print(popped.key, end=' ')
+ 
+ 
+tree = None
+ 
+print('Menu (this assumes no duplicate keys)')
+print('add <data> at root')
+print('add <data> below <data>')
+print('bfs')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'add':
+        data = int(do[1])
+        new_node = Tree(data)
+        suboperation = do[2].strip().lower() 
+        if suboperation == 'at':
+            tree = new_node
+        elif suboperation == 'below':
+            position = do[3].strip().lower()
+            key = int(position)
+            ref_node = None
+            if tree is not None:
+                ref_node = tree.search(key)
+            if ref_node is None:
+                print('No such key.')
+                continue
+            ref_node.add(new_node)
+ 
+    elif operation == 'bfs':
+        if tree is None:
+            print('Tree is empty.')
+        else:
+            print('BFS traversal: ', end='')
+            tree.bfs()
+            print()
+ 
+    elif operation == 'quit':
+        break
+
+str=input("Enter the String:")
+count = 0
+j=len(str)-1
+for i in range(len(str)):
+    if str[i]==str[j]:
+        count+=1
+    j-=1
+if count==len(str):
+    print("Input string is palindrome")
+else:
+    print("Input string is not palindrome")
+class Stack:
+    def __init__(self):
+        self.q = Queue()
+ 
+    def is_empty(self):
+        return self.q.is_empty()
+ 
+    def push(self, data):
+        self.q.enqueue(data)
+ 
+    def pop(self):
+        for _ in range(self.q.get_size() - 1):
+            dequeued = self.q.dequeue()
+            self.q.enqueue(dequeued)
+        return self.q.dequeue()
+ 
+ 
+class Queue:
+    def __init__(self):
+        self.items = []
+        self.size = 0
+ 
+    def is_empty(self):
+        return self.items == []
+ 
+    def enqueue(self, data):
+        self.size += 1
+        self.items.append(data)
+ 
+    def dequeue(self):
+        self.size -= 1
+        return self.items.pop(0)
+ 
+    def get_size(self):
+        return self.size
+ 
+ 
+s = Stack()
+ 
+print('Menu')
+print('push <value>')
+print('pop')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'push':
+        s.push(int(do[1]))
+    elif operation == 'pop':
+        if s.is_empty():
+            print('Stack is empty.')
+        else:
+            print('Popped value: ', s.pop())
+    elif operation == 'quit':
+        break
+
+row_size=int(input("Enter the row size:"))
+np=1
+for out in range(0,row_size):
+    for in1 in range(row_size-1,out,-1):
+        print(" ",end="")
+    for in2 in range(0, np):
+        print(np-out,end="")
+    np+=2
+    print("\r")
+
+n=int(input("Enter number of rows: "))
+for i in range (n,0,-1):
+    print((n-i) * ' ' + i * '*')
+
+
+print("Enter the row and column size:");
+
+row_size=input()
+for out in range(ord(row_size),ord('A')-1,-1):
+    for i in range(ord(row_size),ord('A')-1,-1):
+        print(chr(out),end=" ")
+    print("\r")
+
+
+
+import sys
+arr=[]
+freq=[]
+max=-sys.maxsize-1
+size = int(input("Enter the size of the array: "))
+print("Enter the Element of the array:")
+for i in range(0,size):
+    num = int(input())
+    arr.append(num)
+for i in range(0, size):
+    if arr[i]>=max:
+        max=arr[i]
+for i in range(0,max+1):
+    freq.append(0)
+for i in range(0, size):
+    freq[arr[i]]+=1
+list_oc=9999
+list_v=9999
+for i in range(0, size):
+    if freq[arr[i]] < list_oc:
+        list_oc = freq[arr[i]]
+        list_v = arr[i]
+print("The List occurring Number ",list_v," occurs ",list_oc," times.")
+l=[]
+b=int(input("Enter a number: "))
+while(b>0):
+    dig=b%10
+    l.append(dig)
+    b=b//10
+print("Sum is:")
+print(sum(l))
+ 
+n=int(input("Enter the number of elements to be in the list:"))
+b=[]
+for i in range(0,n):
+    a=int(input("Element: "))
+    b.append(a)
+sum1=0
+sum2=0
+sum3=0
+for j in b:
+    if(j>0):
+        if(j%2==0):
+            sum1=sum1+j
+        else:
+            sum2=sum2+j
+    else:
+        sum3=sum3+j
+print("Sum of all positive even numbers:",sum1)
+print("Sum of all positive odd numbers:",sum2)
+print("Sum of all negative numbers:",sum3)
+class D_aryHeap:
+    def __init__(self, d):
+        self.items = []
+        self.d = d
+ 
+    def size(self):
+        return len(self.items)
+ 
+    def parent(self, i):
+        return (i - 1)//self.d
+ 
+    def child(self, index, position):
+        return index*self.d + (position + 1)
+ 
+    def get(self, i):
+        return self.items[i]
+ 
+    def get_max(self):
+        if self.size() == 0:
+            return None
+        return self.items[0]
+ 
+    def extract_max(self):
+        if self.size() == 0:
+            return None
+        largest = self.get_max()
+        self.items[0] = self.items[-1]
+        del self.items[-1]
+        self.max_heapify(0)
+        return largest
+ 
+    def max_heapify(self, i):
+        largest = i
+        for j in range(self.d):
+            c = self.child(i, j)
+            if (c < self.size() and self.get(c) > self.get(largest)):
+                largest = c
+        if (largest != i):
+            self.swap(largest, i)
+            self.max_heapify(largest)
+ 
+    def swap(self, i, j):
+        self.items[i], self.items[j] = self.items[j], self.items[i]
+ 
+    def insert(self, key):
+        index = self.size()
+        self.items.append(key)
+        while (index != 0):
+            p = self.parent(index)
+            if self.get(p) < self.get(index):
+                self.swap(p, index)
+            index = p
+ 
+ 
+d = int(input('Enter the value of D: '));
+dheap = D_aryHeap(d)
+ 
+print('Menu (this assumes no duplicate keys)')
+print('insert <data>')
+print('max get')
+print('max extract')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'insert':
+        data = int(do[1])
+        dheap.insert(data)
+    elif operation == 'max':
+        suboperation = do[1].strip().lower()
+        if suboperation == 'get':
+            print('Maximum value: {}'.format(dheap.get_max()))
+        elif suboperation == 'extract':
+            print('Maximum value removed: {}'.format(dheap.extract_max()))
+ 
+    elif operation == 'quit':
+        break
+filename=input("Enter file name: ")
+for line in reversed(list(open(filename))):
+    print(line.rstrip())
+Solution
+def printDict():
+	d=dict()
+	d[1]=1
+	d[2]=2**2
+	d[3]=3**2
+	print d
+		
+
+printDict()
+
+
+
+
+
+
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the 1st matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+# check except Diagonal all elements are 0 or not
+# and check all diagonal elements are same or not
+point=0
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        if i!=j and matrix[i][j]!=0:
+            point=1
+            break
+        if i==j and matrix[i][j]!=matrix[i][j]:
+            point = 1
+            break
+
+if point==1:
+    print("Given Matrix is not a Scaler Matrix.")
+else:
+    print("Given Matrix is a Scaler Matrix.")
+l1 = []
+num1 = int(input('Enter size of list 1: '))
+for n in range(num1):
+    numbers1 = int(input('Enter any number:'))
+    l1.append(numbers1)
+ 
+l2 = []
+num2 = int(input('Enter size of list 2:'))
+for n in range(num2):
+    numbers2 = int(input('Enter any number:'))
+    l2.append(numbers2)
+ 
+union = list(set().union(l1,l2))
+ 
+print('The Union of two lists is:',union)
+class Node:
+    def __init__(self, data):
+       self.data = data
+       self.next = None
+ 
+class Queue:
+    def __init__(self):
+        self.head = None
+        self.last = None
+ 
+    def enqueue(self, data):
+        if self.last is None:
+            self.head = Node(data)
+            self.last = self.head
+        else:
+            self.last.next = Node(data)
+            self.last = self.last.next
+ 
+    def dequeue(self):
+        if self.head is None:
+            return None
+        else:
+            to_return = self.head.data
+            self.head = self.head.next
+            return to_return
+ 
+a_queue = Queue()
+while True:
+    print('enqueue <value>')
+    print('dequeue')
+    print('quit')
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'enqueue':
+        a_queue.enqueue(int(do[1]))
+    elif operation == 'dequeue':
+        dequeued = a_queue.dequeue()
+        if dequeued is None:
+            print('Queue is empty.')
+        else:
+            print('Dequeued element: ', int(dequeued))
+    elif operation == 'quit':
+        break
+
+unicodeString = u"hello world!"
+print unicodeString
+
+
+
+subjects=["I", "You"]
+verbs=["Play", "Love"]
+objects=["Hockey","Football"]
+for i in range(len(subjects)):
+    for j in range(len(verbs)):
+        for k in range(len(objects)):
+            sentence = "%s %s %s." % (subjects[i], verbs[j], objects[k])
+            print sentence
+
+
+
+
+
+
+'''Write
+a Python program to check whether a given number is a perfect square
+number or not. or  Write a program to check whether
+a given number is a perfect square number or not using Python '''
+
+
+
+import math
+num=int(input("Enter a number:"))
+sqr=math.sqrt(num)
+if sqr-math.floor(sqr)==0:
+   print("It is a Perfect Square")
+else:
+   print("It is not a Perfect Square")
+
+
+
+ 
+n=int(input("Enter the number of elements to be inserted: "))
+a=[]
+for i in range(0,n):
+    elem=int(input("Enter element: "))
+    a.append(elem)
+avg=sum(a)/n
+print("Average of elements in the list",round(avg,2))
+
+import math
+num=int(input("Enter a number:"))
+flag=0
+for i in range(0,num+1):
+    if i*(i+1)==num:
+        flag=1
+        break
+if flag==1:
+    print("It is a Pronic Number.")
+else:
+   print("It is Not a Pronic Number.")
+c=0def Check_Palindrome(str,i,length):    global c    if (i < len(str)):        if (str[i] == str[length]):            c +=1            Check_Palindrome(str, i + 1, length-1)    return cstr=input("Enter your String:")if(Check_Palindrome(str,0,len(str)-1)==len(str)):    print("It is a Palindrome String.")else: print("It is not a Palindrome String.")
+arr=[]size = int(input("Enter the size of the array: "))print("Enter the Element of the array:")for i in range(0,size):    num = int(input())    arr.append(num)First_element=arr[0]Second_element=arr[1]third_element=arr[2]Max_Product=First_element*Second_element*third_elementfor i in range(0,size-2):    for j in range(i+1, size-1):        for k in range(j + 1, size):            product=arr[i]*arr[j]*arr[k]            if abs(product) >= abs(Max_Product):                Max_Product =product                First_element = arr[i]                Second_element = arr[j]                third_element=arr[k]print("Maximum Product of 3 numbers pair is (",First_element,",",Second_element,",",third_element,")")print("Maximum Product of 3 numbers is ",Max_Product)
+
+n=int(input("Enter the n value:"))
+print("Printing Odd numbers between 1 to ",n)
+for i in range(1,n+1):
+    if i%2!=0:
+     print(i,end=" ")
+
+print("Enter the range of number(Limit):")
+n=int(input())
+a=10
+b=5
+i=1
+while(i<=n):
+    if(i%2==0):
+        print(b,end=" ")
+        b += 10
+    else:
+        print(a, end=" ")
+        a += 50
+    i+=1
+
+print("Enter the range of number:")
+n=int(input())
+print("Enter the value of x:")
+x=int(input())
+sum=0
+i=1
+while(i<=n):
+    for j in range(1,i+1):
+        sum+=j
+    i+=1
+print("The sum of the series = ",sum)
+n=int(input("Enter the range of number:"))sum=0p=3for i in range(1,n+1):    sum += p    p=(p*10)+3print("The sum of the series = ",sum)
+a=[]
+n= int(input("Enter the number of elements in list:"))
+for x in range(0,n):
+    element=input("Enter element" + str(x+1) + ":")
+    a.append(element)
+print(a)
+c=[]
+count=0
+b=input("Enter word to remove: ")
+n=int(input("Enter the occurrence to remove: "))
+for i in a:
+    if(i==b):
+        count=count+1
+        if(count!=n):
+            c.append(i)
+    else:
+        c.append(i)
+if(count==0):
+    print("Item not found ")
+else: 
+    print("The number of repetitions is: ",count)
+    print("Updated list is: ",c)
+    print("The distinct elements are: ",set(a))
+
+import math
+hex=input("Enter Hexadecimal Number:")
+value=0
+decimal=0
+j=len(hex)
+j-=1
+for i in range(0,len(hex)):
+    if hex[i]>='0' and hex[i]<='9' :
+        value=(int)(hex[i])
+    if hex[i]=='A' or hex[i]=='a':
+        value=10
+    if hex[i] == 'B' or hex[i] == 'b':
+        value=11
+    if hex[i] == 'C' or hex[i] == 'c':
+        value=12
+    if hex[i] == 'D' or hex[i] == 'd':
+        value=13
+    if hex[i] == 'E' or hex[i] == 'e':
+        value=14
+    if hex[i] == 'F' or hex[i] == 'f':
+        value=15
+    decimal=decimal+(int)(value*math.pow(16,j))
+    j-=1
+print("Decimal Number is:",decimal)
+# Taking input of the matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+# compute square of the matrix
+for i in range(0,row_size):
+    for j in range(0,col_size):
+        matrix[i][j]=pow(matrix[i][j],2)
+
+# display square of the matrix
+print("Square of the Matrix elements are:")
+for m in matrix:
+    print(m)
+def Factorial(num):    if num<=0:        return 1    else:        return num*Factorial(num-1)num=int(input("Enter the Number:"))print("Factorial of Given Number Using Recursion is:",Factorial(num))
+def SumEven(num1,num2):    if num1>num2:        return 0    return num1+SumEven(num1+2,num2)num1=2print("Enter your Limit:")num2=int(input())print("Sum of all Even numbers in the given range is:",SumEven(num1,num2))
+
+
+'''Write a Python
+program to find the nth strong number. or Write a
+program to find the nth strong number using Python '''
+
+print("Enter the Nth value:")
+rangenumber=int(input())
+num = 1
+c = 0
+letest = 0
+
+while (c != rangenumber):
+    num2 = num
+    num1 = num
+    sum = 0
+    fact = 1
+    while (num1 != 0):
+        fact = 1
+        rem = num1 % 10
+        num1 = num1 // 10
+        for j in range(1,rem+1):
+            fact = fact * j
+        sum = sum + fact
+    if (sum == num2):
+        c+=1
+        letest = num
+    num = num + 1
+print(rangenumber,"th strong number is ",letest) 
+
+
+class Graph:
+    def __init__(self):
+        # dictionary containing keys that map to the corresponding vertex object
+        self.vertices = {}
+ 
+    def add_vertex(self, key):
+        """Add a vertex with the given key to the graph."""
+        vertex = Vertex(key)
+        self.vertices[key] = vertex
+ 
+    def get_vertex(self, key):
+        """Return vertex object with the corresponding key."""
+        return self.vertices[key]
+ 
+    def __contains__(self, key):
+        return key in self.vertices
+ 
+    def add_edge(self, src_key, dest_key, weight=1):
+        """Add edge from src_key to dest_key with given weight."""
+        self.vertices[src_key].add_neighbour(self.vertices[dest_key], weight)
+ 
+    def does_edge_exist(self, src_key, dest_key):
+        """Return True if there is an edge from src_key to dest_key."""
+        return self.vertices[src_key].does_it_point_to(self.vertices[dest_key])
+ 
+    def __iter__(self):
+        return iter(self.vertices.values())
+ 
+ 
+class Vertex:
+    def __init__(self, key):
+        self.key = key
+        self.points_to = {}
+ 
+    def get_key(self):
+        """Return key corresponding to this vertex object."""
+        return self.key
+ 
+    def add_neighbour(self, dest, weight):
+        """Make this vertex point to dest with given edge weight."""
+        self.points_to[dest] = weight
+ 
+    def get_neighbours(self):
+        """Return all vertices pointed to by this vertex."""
+        return self.points_to.keys()
+ 
+    def get_weight(self, dest):
+        """Get weight of edge from this vertex to dest."""
+        return self.points_to[dest]
+ 
+    def does_it_point_to(self, dest):
+        """Return True if this vertex points to dest."""
+        return dest in self.points_to
+ 
+ 
+g = Graph()
+print('Menu')
+print('add vertex <key>')
+print('add edge <src> <dest> [weight]')
+print('display')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0]
+    if operation == 'add':
+        suboperation = do[1]
+        if suboperation == 'vertex':
+            key = int(do[2])
+            if key not in g:
+                g.add_vertex(key)
+            else:
+                print('Vertex already exists.')
+        elif suboperation == 'edge':
+            src = int(do[2])
+            dest = int(do[3])
+            if src not in g:
+                print('Vertex {} does not exist.'.format(src))
+            elif dest not in g:
+                print('Vertex {} does not exist.'.format(dest))
+            else:
+                if not g.does_edge_exist(src, dest):
+                    if len(do) == 5:
+                        weight = int(do[4])
+                        g.add_edge(src, dest, weight)
+                    else:
+                        g.add_edge(src, dest)
+                else:
+                    print('Edge already exists.')
+ 
+    elif operation == 'display':
+        print('Vertices: ', end='')
+        for v in g:
+            print(v.get_key(), end=' ')
+        print()
+ 
+        print('Edges: ')
+        for v in g:
+            for dest in v.get_neighbours():
+                w = v.get_weight(dest)
+                print('(src={}, dest={}, weight={}) '.format(v.get_key(),
+                                                             dest.get_key(), w))
+        print()
+ 
+    elif operation == 'quit':
+        break
+
+
+import math
+num=int(input("Enter a number:"))
+print("Prime Factors of ",num,end=" are \n")
+while num%2==0:
+    print(2,)
+    num=num/2
+for i in range(3,int(math.sqrt(num))+1,2):
+   while num%i==0:
+      print(i,)
+      num = num/i
+if num>2:
+  print(num)
+
+
+from random import shuffle
+li = [3,6,7,8]
+shuffle(li)
+print li
+
+
+
+
+
+import random
+print random.sample([i for i in range(1,1001) if i%5==0 and i%7==0], 5)
+
+
+string1=raw_input("Enter first string:")
+string2=raw_input("Enter second string:")
+count1=0
+count2=0
+for i in string1:
+      count1=count1+1
+for j in string2:
+      count2=count2+1
+if(count1<count2):
+      print("Larger string is:")
+      print(string2)
+elif(count1==count2):
+      print("Both strings are equal.")
+else:
+      print("Larger string is:")
+      print(string1)
+
+
+print("Enter the row and column size:");
+
+row_size=input()
+for out in range(ord(row_size),ord('A')-1,-1):
+    for i in range(ord(row_size),ord('A')-1,-1):
+        print(chr(out),end=" ")
+    print("\r")
+
+
+n=int(input("Enter the range of number:"))sum=0p=1for i in range(1,n+1):    sum += p    p = (p * 10) + 1print("The sum of the series = ",sum)
+num1=int(input("Enter 1st number:"))
+num2=int(input("Enter 2nd number:"))
+
+num1=num1+num2
+num2=num1-num2
+num1=num1-num2
+
+print("***After swapping***")
+print("Number 1: ",num1)
+print("Number 2: ",num2)
+class Graph:
+    def __init__(self):
+        # dictionary containing keys that map to the corresponding vertex object
+        self.vertices = {}
+ 
+    def add_vertex(self, key):
+        """Add a vertex with the given key to the graph."""
+        vertex = Vertex(key)
+        self.vertices[key] = vertex
+ 
+    def get_vertex(self, key):
+        """Return vertex object with the corresponding key."""
+        return self.vertices[key]
+ 
+    def __contains__(self, key):
+        return key in self.vertices
+ 
+    def add_edge(self, src_key, dest_key, weight=1):
+        """Add edge from src_key to dest_key with given weight."""
+        self.vertices[src_key].add_neighbour(self.vertices[dest_key], weight)
+ 
+    def does_edge_exist(self, src_key, dest_key):
+        """Return True if there is an edge from src_key to dest_key."""
+        return self.vertices[src_key].does_it_point_to(self.vertices[dest_key])
+ 
+    def __len__(self):
+        return len(self.vertices)
+ 
+    def __iter__(self):
+        return iter(self.vertices.values())
+ 
+ 
+class Vertex:
+    def __init__(self, key):
+        self.key = key
+        self.points_to = {}
+ 
+    def get_key(self):
+        """Return key corresponding to this vertex object."""
+        return self.key
+ 
+    def add_neighbour(self, dest, weight):
+        """Make this vertex point to dest with given edge weight."""
+        self.points_to[dest] = weight
+ 
+    def get_neighbours(self):
+        """Return all vertices pointed to by this vertex."""
+        return self.points_to.keys()
+ 
+    def get_weight(self, dest):
+        """Get weight of edge from this vertex to dest."""
+        return self.points_to[dest]
+ 
+    def does_it_point_to(self, dest):
+        """Return True if this vertex points to dest."""
+        return dest in self.points_to
+ 
+ 
+def bellman_ford(g, source):
+    """Return distance where distance[v] is min distance from source to v.
+ 
+    This will return a dictionary distance.
+ 
+    g is a Graph object which can have negative edge weights.
+    source is a Vertex object in g.
+    """
+    distance = dict.fromkeys(g, float('inf'))
+    distance[source] = 0
+ 
+    for _ in range(len(g) - 1):
+        for v in g:
+            for n in v.get_neighbours():
+                distance[n] = min(distance[n], distance[v] + v.get_weight(n))
+ 
+    return distance
+ 
+ 
+g = Graph()
+print('Menu')
+print('add vertex <key>')
+print('add edge <src> <dest> <weight>')
+print('bellman-ford <source vertex key>')
+print('display')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0]
+    if operation == 'add':
+        suboperation = do[1]
+        if suboperation == 'vertex':
+            key = int(do[2])
+            if key not in g:
+                g.add_vertex(key)
+            else:
+                print('Vertex already exists.')
+        elif suboperation == 'edge':
+            src = int(do[2])
+            dest = int(do[3])
+            weight = int(do[4])
+            if src not in g:
+                print('Vertex {} does not exist.'.format(src))
+            elif dest not in g:
+                print('Vertex {} does not exist.'.format(dest))
+            else:
+                if not g.does_edge_exist(src, dest):
+                    g.add_edge(src, dest, weight)
+                else:
+                    print('Edge already exists.')
+ 
+    elif operation == 'bellman-ford':
+        key = int(do[1])
+        source = g.get_vertex(key)
+        distance = bellman_ford(g, source)
+        print('Distances from {}: '.format(key))
+        for v in distance:
+            print('Distance to {}: {}'.format(v.get_key(), distance[v]))
+        print()
+ 
+    elif operation == 'display':
+        print('Vertices: ', end='')
+        for v in g:
+            print(v.get_key(), end=' ')
+        print()
+ 
+        print('Edges: ')
+        for v in g:
+            for dest in v.get_neighbours():
+                w = v.get_weight(dest)
+                print('(src={}, dest={}, weight={}) '.format(v.get_key(),
+                                                             dest.get_key(), w))
+        print()
+ 
+    elif operation == 'quit':
+        break
+fname = input("Enter file name: ")
+k = 0
+ 
+with open(fname, 'r') as f:
+    for line in f:
+        words = line.split()
+        for i in words:
+            for letter in i:
+                if(letter.isspace):
+                    k=k+1
+print("Occurrences of blank spaces:")
+print(k)
+row_size=int(input("Enter the row size:"))x=1for out in range(row_size,-(row_size+1),-1):    for inn in range(1,abs(out)+1):        print(" ",end="")    for p in range(row_size,abs(out)-1,-1):        print(x,end=" ")    if out > 0:        x +=1    else:        x -=1    print("\r")
+Solution
+tp=(1,2,3,4,5,6,7,8,9,10)
+tp1=tp[:5]
+tp2=tp[5:]
+print tp1
+print tp2
+
+
+
+sum=0def SumOfOddElement(arr,n):    global sum    if(n>0):        i=n-1        if(arr[i]%2==1):            sum=sum+arr[i]        SumOfOddElement(arr,i)    return sumarr=[]n = int(input("Enter the size of the array: "))print("Enter the Element of the array:")for i in range(0,n):    num = int(input())    arr.append(num)print("Sum of Odd Element is:",SumOfOddElement(arr,n))
+freq = {}   # frequency of words in text
+line = raw_input()
+for word in line.split():
+    freq[word] = freq.get(word,0)+1
+
+words = freq.keys()
+words.sort()
+
+for w in words:
+    print "%s:%d" % (w,freq[w])
+
+
+li = [5,6,77,45,22,12,24]
+li = [x for x in li if x%2!=0]
+print li
+
+
+ 
+a=int(input("Enter value of first variable: "))
+b=int(input("Enter value of second variable: "))
+a=a+b
+b=a-b
+a=a-b
+print("a is:",a," b is:",b)
+ 
+date=input("Enter the date: ")
+dd,mm,yy=date.split('/')
+dd=int(dd)
+mm=int(mm)
+yy=int(yy)
+if(mm==1 or mm==3 or mm==5 or mm==7 or mm==8 or mm==10 or mm==12):
+    max1=31
+elif(mm==4 or mm==6 or mm==9 or mm==11):
+    max1=30
+elif(yy%4==0 and yy%100!=0 or yy%400==0):
+    max1=29
+else:
+    max1=28
+if(mm<1 or mm>12):
+    print("Date is invalid.")
+elif(dd<1 or dd>max1):
+    print("Date is invalid.")
+elif(dd==max1 and mm!=12):
+    dd=1
+    mm=mm+1
+    print("The incremented date is: ",dd,mm,yy)
+elif(dd==31 and mm==12):
+    dd=1
+    mm=1
+    yy=yy+1
+    print("The incremented date is: ",dd,mm,yy)
+else:
+    dd=dd+1
+    print("The incremented date is: ",dd,mm,yy)
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the 1st matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+sum=0
+#Calculate sum of the diagonals element
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        if i==j:
+            sum+=matrix[i][j]
+# Display the sum of diagonals Element
+print("Sum of diagonals Element is: ",sum)
+ 
+principle=float(input("Enter the principle amount:"))
+time=int(input("Enter the time(years):"))
+rate=float(input("Enter the rate:"))
+simple_interest=(principle*time*rate)/100
+print("The simple interest is:",simple_interest)
+
+rangenumber=int(input("Enter a Nth Number:"))
+c = 0
+letest = 0
+num = 1
+while c != rangenumber:
+    sum = 0
+    num1=num
+    while sum != 1 and sum != 4:
+        sum = 0
+        while num1 != 0:
+            rem = num1 % 10
+            sum += (rem * rem)
+            num1 //= 10
+        num1 = sum
+
+    if sum == 1:
+            c+=1
+            letest = num
+
+    num = num + 1
+print(rangenumber,"th Happy number is ",letest)
+
+import java.util.Scanner;
+public class p10 {
+
+ public static void main(String[] args) {
+ Scanner cs=new Scanner(System.in);
+  System.out.println("Enter the row and column size:");
+ int row_size,out,in;
+   row_size=cs.nextInt();
+   for(out=row_size;out>=1;out--)
+   {
+    for(in=1;in<=row_size;in++)
+     System.out.print(out);
+
+         System.out.println();
+   }
+ cs.close();
+ }
+}
+
+print("Enter a range:")
+range1=int(input())
+range2=int(input())
+print("Magic numbers between ",range1," and ",range2," are: ")
+for i in range(range1,range2+1):
+    num3 = i
+    num1 = i
+    sum=0
+# Sum of digit
+    while num1 != 0:
+        rem = num1 % 10
+        sum += rem
+        num1 //= 10
+# Reverse of sum
+    rev = 0
+    num2 = sum
+    while num2 != 0:
+        rem2 = num2 % 10
+        rev = rev * 10 + rem2
+        num2 //= 10
+    if sum*rev==num3:
+        print(i,end=" ")
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+#Calculate sum of Upper triangular matrix element
+sum=0
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        if i>j:
+            sum += matrix[i][j]
+
+# display the sum of the Upper triangular matrix element
+print("Sum of Upper Triangular Matrix Elements is: ",sum)
+
+li = [2,4,6,8]
+for i in li:
+    assert i%2==0
+
+
+
+
+dic = {}
+s=raw_input()
+for s in s:
+    dic[s] = dic.get(s,0)+1
+print '\n'.join(['%s,%s' % (k, v) for k, v in dic.items()])
+
+
+
+print("Enter a range:")
+range1=int(input())
+range2=int(input())
+print("Armstrong numbers between ",range1," and ",range2," are: ")
+for i in range(range1,range2+1):
+    num2=i
+    num1=i
+    sum=0
+    while(num1!=0):
+        rem=num1%10
+        num1=int(num1/10)
+        sum=sum+rem*rem*rem
+    if sum==num2:
+print(i,end=" ") 
+
+def gnome_sort(alist):
+    for pos in range(1, len(alist)):
+        while (pos != 0 and alist[pos] < alist[pos - 1]):
+            alist[pos], alist[pos - 1] = alist[pos - 1], alist[pos]
+            pos = pos - 1
+ 
+ 
+alist = input('Enter the list of numbers: ').split()
+alist = [int(x) for x in alist]
+gnome_sort(alist)
+print('Sorted list: ', end='')
+print(alist)
+
+print("Enter the range of number(Limit):")
+n=int(input())
+i=1
+while(i<=n):
+    print((int)((i*(i+1))/2),end=" ")
+    i+=1
+class Graph:
+    def __init__(self):
+        # dictionary containing keys that map to the corresponding vertex object
+        self.vertices = {}
+ 
+    def add_vertex(self, key):
+        """Add a vertex with the given key to the graph."""
+        vertex = Vertex(key)
+        self.vertices[key] = vertex
+ 
+    def get_vertex(self, key):
+        """Return vertex object with the corresponding key."""
+        return self.vertices[key]
+ 
+    def __contains__(self, key):
+        return key in self.vertices
+ 
+    def add_edge(self, src_key, dest_key, weight=1):
+        """Add edge from src_key to dest_key with given weight."""
+        self.vertices[src_key].add_neighbour(self.vertices[dest_key], weight)
+ 
+    def does_edge_exist(self, src_key, dest_key):
+        """Return True if there is an edge from src_key to dest_key."""
+        return self.vertices[src_key].does_it_point_to(self.vertices[dest_key])
+ 
+    def __iter__(self):
+        return iter(self.vertices.values())
+ 
+ 
+class Vertex:
+    def __init__(self, key):
+        self.key = key
+        # dictionary containing destination vertices mapped to the weight of the
+        # edge with which they are joined to this vertex
+        self.points_to = {}
+ 
+    def get_key(self):
+        """Return key corresponding to this vertex object."""
+        return self.key
+ 
+    def add_neighbour(self, dest, weight):
+        """Make this vertex point to dest with given edge weight."""
+        self.points_to[dest] = weight
+ 
+    def get_neighbours(self):
+        """Return all vertices pointed to by this vertex."""
+        return self.points_to.keys()
+ 
+    def get_weight(self, dest):
+        """Get weight of edge from this vertex to dest."""
+        return self.points_to[dest]
+ 
+    def does_it_point_to(self, dest):
+        """Return True if this vertex points to dest."""
+        return dest in self.points_to
+ 
+ 
+class Queue:
+    def __init__(self):
+        self.items = []
+ 
+    def is_empty(self):
+        return self.items == []
+ 
+    def enqueue(self, data):
+        self.items.append(data)
+ 
+    def dequeue(self):
+        return self.items.pop(0)
+ 
+ 
+def find_shortest_paths(src):
+    """Returns tuple of two dictionaries: (parent, distance)
+ 
+    parent contains vertices mapped to their parent vertex in the shortest
+    path from src to that vertex.
+    distance contains vertices mapped to their shortest distance from src.
+    """
+    parent = {src: None}
+    distance = {src: 0}
+ 
+    visited = set()
+    q = Queue()
+    q.enqueue(src)
+    visited.add(src)
+    while not q.is_empty():
+        current = q.dequeue()
+        for dest in current.get_neighbours():
+            if dest not in visited:
+                visited.add(dest)
+                parent[dest] = current
+                distance[dest] = distance[current] + 1
+                q.enqueue(dest)
+    return (parent, distance)
+ 
+g = Graph()
+print('Menu')
+print('add vertex <key>')
+print('add edge <src> <dest>')
+print('shortest <vertex key>')
+print('display')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0]
+    if operation == 'add':
+        suboperation = do[1]
+        if suboperation == 'vertex':
+            key = int(do[2])
+            if key not in g:
+                g.add_vertex(key)
+            else:
+                print('Vertex already exists.')
+        elif suboperation == 'edge':
+            src = int(do[2])
+            dest = int(do[3])
+            if src not in g:
+                print('Vertex {} does not exist.'.format(src))
+            elif dest not in g:
+                print('Vertex {} does not exist.'.format(dest))
+            else:
+                if not g.does_edge_exist(src, dest):
+                    g.add_edge(src, dest)
+                else:
+                    print('Edge already exists.')
+ 
+    elif operation == 'shortest':
+        key = int(do[1])
+        src = g.get_vertex(key)
+        parent, distance = find_shortest_paths(src)
+ 
+        print('Path from destination vertices to source vertex {}:'.format(key))
+        for v in parent:
+            print('Vertex {} (distance {}): '.format(v.get_key(), distance[v]),
+                  end='')
+            while parent[v] is not None:
+                print(v.get_key(), end = ' ')
+                v = parent[v]
+            print(src.get_key()) # print source vertex
+ 
+    elif operation == 'display':
+        print('Vertices: ', end='')
+        for v in g:
+            print(v.get_key(), end=' ')
+        print()
+ 
+        print('Edges: ')
+        for v in g:
+            for dest in v.get_neighbours():
+                w = v.get_weight(dest)
+                print('(src={}, dest={}, weight={}) '.format(v.get_key(),
+                                                             dest.get_key(), w))
+        print()
+ 
+    elif operation == 'quit':
+        break
+class Graph:
+    def __init__(self):
+        # dictionary containing keys that map to the corresponding vertex object
+        self.vertices = {}
+ 
+    def add_vertex(self, key):
+        """Add a vertex with the given key to the graph."""
+        vertex = Vertex(key)
+        self.vertices[key] = vertex
+ 
+    def get_vertex(self, key):
+        """Return vertex object with the corresponding key."""
+        return self.vertices[key]
+ 
+    def __contains__(self, key):
+        return key in self.vertices
+ 
+    def add_edge(self, src_key, dest_key, weight=1):
+        """Add edge from src_key to dest_key with given weight."""
+        self.vertices[src_key].add_neighbour(self.vertices[dest_key], weight)
+ 
+    def add_undirected_edge(self, v1_key, v2_key, weight=1):
+        """Add undirected edge (2 directed edges) between v1_key and v2_key with
+        given weight."""
+        self.add_edge(v1_key, v2_key, weight)
+        self.add_edge(v2_key, v1_key, weight)
+ 
+    def does_undirected_edge_exist(self, v1_key, v2_key):
+        """Return True if there is an undirected edge between v1_key and v2_key."""
+        return (self.does_edge_exist(v1_key, v2_key)
+                and self.does_edge_exist(v1_key, v2_key))
+ 
+    def does_edge_exist(self, src_key, dest_key):
+        """Return True if there is an edge from src_key to dest_key."""
+        return self.vertices[src_key].does_it_point_to(self.vertices[dest_key])
+ 
+    def __iter__(self):
+        return iter(self.vertices.values())
+ 
+ 
+class Vertex:
+    def __init__(self, key):
+        self.key = key
+        self.points_to = {}
+ 
+    def get_key(self):
+        """Return key corresponding to this vertex object."""
+        return self.key
+ 
+    def add_neighbour(self, dest, weight):
+        """Make this vertex point to dest with given edge weight."""
+        self.points_to[dest] = weight
+ 
+    def get_neighbours(self):
+        """Return all vertices pointed to by this vertex."""
+        return self.points_to.keys()
+ 
+    def get_weight(self, dest):
+        """Get weight of edge from this vertex to dest."""
+        return self.points_to[dest]
+ 
+    def does_it_point_to(self, dest):
+        """Return True if this vertex points to dest."""
+        return dest in self.points_to
+ 
+ 
+def is_bipartite(vertex, visited):
+    """Return True if component containing vertex is bipartite and put all
+    vertices in its component in set visited."""
+    colour = {vertex: 0}
+    return is_bipartite_helper(vertex, visited, colour)
+ 
+ 
+def is_bipartite_helper(v, visited, colour):
+    """Return True if component containing vertex is bipartite and put all
+    vertices in its component in set visited. Uses dictionary colour to keep
+    track of colour of each vertex."""
+    visited.add(v)
+    next_colour = 1 - colour[v] # switch colour
+    for dest in v.get_neighbours():
+        if dest not in visited:
+            colour[dest] = next_colour
+            if not is_bipartite_helper(dest, visited, colour):
+                return False
+        else:
+            if colour[dest] != next_colour:
+                return False
+    return True
+ 
+ 
+g = Graph()
+print('Undirected Graph')
+print('Menu')
+print('add vertex <key>')
+print('add edge <vertex1> <vertex2>')
+print('bipartite')
+print('display')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0]
+    if operation == 'add':
+        suboperation = do[1]
+        if suboperation == 'vertex':
+            key = int(do[2])
+            if key not in g:
+                g.add_vertex(key)
+            else:
+                print('Vertex already exists.')
+        elif suboperation == 'edge':
+            v1 = int(do[2])
+            v2 = int(do[3])
+            if v1 not in g:
+                print('Vertex {} does not exist.'.format(v1))
+            elif v2 not in g:
+                print('Vertex {} does not exist.'.format(v2))
+            else:
+                if not g.does_undirected_edge_exist(v1, v2):
+                    g.add_undirected_edge(v1, v2)
+                else:
+                    print('Edge already exists.')
+ 
+    elif operation == 'bipartite':
+        bipartite = True
+        visited = set()
+        for v in g:
+            if v not in visited:
+                if not is_bipartite(v, visited):
+                    bipartite = False
+                    break
+ 
+        if bipartite:
+            print('Graph is bipartite.')
+        else:
+            print('Graph is not bipartite.')
+ 
+    elif operation == 'display':
+        print('Vertices: ', end='')
+        for v in g:
+            print(v.get_key(), end=' ')
+        print()
+ 
+        print('Edges: ')
+        for v in g:
+            for dest in v.get_neighbours():
+                w = v.get_weight(dest)
+                print('(src={}, dest={}, weight={}) '.format(v.get_key(),
+                                                             dest.get_key(), w))
+        print()
+ 
+    elif operation == 'quit':
+        break
+
+num1=int(input("Enter first number:"))
+num2=int(input("Enter  second number:"))
+sub=num1+(~num2+1)#number + 2's complement of number
+print("Subtraction of two number is ",sub)
+
+def lcs(u, v):
+    """Return c where c[i][j] contains length of LCS of u[i:] and v[j:]."""
+    c = [[-1]*(len(v) + 1) for _ in range(len(u) + 1)]
+    lcs_helper(u, v, c, 0, 0)
+    return c
+ 
+ 
+def lcs_helper(u, v, c, i, j):
+    """Return length of LCS of u[i:] and v[j:] and fill in table c.
+ 
+    c[i][j] contains the length of LCS of u[i:] and v[j:].
+    This function fills in c as smaller subproblems for solving c[i][j] are
+    solved."""
+    if c[i][j] >= 0:
+        return c[i][j]
+ 
+    if i == len(u) or j == len(v):
+        q = 0
+    else:
+        if u[i] == v[j]:
+            q = 1 + lcs_helper(u, v, c, i + 1, j + 1)
+        else:
+            q = max(lcs_helper(u, v, c, i + 1, j),
+                    lcs_helper(u, v, c, i, j + 1))
+    c[i][j] = q
+    return q
+ 
+ 
+def print_lcs(u, v, c):
+    """Print one LCS of u and v using table c."""
+    i = j = 0
+    while not (i == len(u) or j == len(v)):
+        if u[i] == v[j]:
+            print(u[i], end='')
+            i += 1
+            j += 1
+        elif c[i][j + 1] > c[i + 1][j]:
+            j += 1
+        else:
+            i += 1
+ 
+ 
+u = input('Enter first string: ')
+v = input('Enter second string: ')
+c = lcs(u, v)
+print('Longest Common Subsequence: ', end='')
+print_lcs(u, v, c)
+class Node:
+    def __init__(self, data):
+       self.data = data
+       self.next = None
+ 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.last_node = None
+ 
+    def append(self, data):
+        if self.last_node is None:
+            self.head = Node(data)
+            self.last_node = self.head
+        else:
+            self.last_node.next = Node(data)
+            self.last_node = self.last_node.next
+ 
+    def alternate(self):
+        self.alternate_helper(self.head)
+ 
+    def alternate_helper(self, current):
+        if current is None:
+            return
+        print(current.data, end = ' ')
+        if current.next:
+            self.alternate_helper(current.next.next)
+ 
+a_llist = LinkedList()
+data_list = input('Please enter the elements in the linked list: ').split()
+for data in data_list:
+    a_llist.append(int(data))
+ 
+print('The alternate nodes of the linked list: ', end = '')
+a_llist.alternate()
+
+
+num=int(input("Enter a number:"))
+fact=1
+for i in range(1,num+1):
+   fact=fact*i
+print("The Factorial is",fact)
+
+
+
+
+def partition(arr,first,last):
+    i=first-1
+    x=arr[last]
+    for j in range(first,last):
+        if(arr[j]<x):
+            i+=1
+            temp=arr[i]
+            arr[i]=arr[j]
+            arr[j]=temp
+    i+=1
+    temp=arr[i]
+    arr[i]=arr[last]
+    arr[last]=temp
+    return i
+
+def qsort(arr,first,last):
+    if(first<last):
+        mid=partition(arr,first,last)
+        qsort(arr,first,mid-1)
+        qsort(arr,mid+1,last)
+
+size=int(input("Enter the size of the array:"))
+arr=[]
+print("Enter the element of the array:")
+for i in range(0,size):
+    num = int(input())
+    arr.append(num)
+
+print("Before Sorting Array Element are: ",arr)
+
+qsort(arr,0,size-1)
+
+print("\nAfter Sorting Array Element are: ",arr)
+arr=[]size = int(input("Enter the size of the array: "))print("Enter the Element of the array:")for i in range(0,size):    num = int(input())    arr.append(num)c=0for i in range(0,size):    if arr[i]!=0:        arr[c]=arr[i]        c+=1for i in range(c,size):        arr[c]=0        c+=1print("After Move all zeros to end, Array is:")print(arr)
+
+n=int(input("Enter the n Value:"))
+x=int(input("Enter the x value:"))
+fact=1
+for i in range(1,n+1):
+    fact*=i
+result=pow(x,n)/fact
+print("Result(x^n/n!)= ",result)
+
+l=[]
+def convert(b):
+    if(b==0):
+        return l
+    dig=b%2
+    l.append(dig)
+    convert(b//2)
+a=int(input("Enter a number: "))
+convert(a)
+l.reverse()
+print("Binary equivalent:")
+for i in l:
+    print i,
+n=int(input("Enter a number: "))
+for j in range(1,n+1):
+    a=[]
+    for i in range(1,j+1):
+        print(i,sep=" ",end=" ")
+        if(i<j):
+            print("+",sep=" ",end=" ")
+        a.append(i)
+    print("=",sum(a))
+ 
+print()
+n=int(input("Enter a number: "))
+for i in range(0,n):
+    for j in range(0,n):
+        if(i==j):
+            print("1",sep=" ",end=" ")
+        else:
+            print("0",sep=" ",end=" ")
+    print()
+
+def f(n):
+    if n == 0: return 0
+    elif n == 1: return 1
+    else: return f(n-1)+f(n-2)
+
+n=int(raw_input())
+print f(n)
+
+
+
+
+s=raw_input()
+s = s[::-1]
+print s
+
+
+def swap_Element(arr,i,j):    temp = arr[i]    arr[i] = arr[j]    arr[j] = tempdef sort_element(arr,n):    if(n>0):        for i in range(0,n):            if (arr[i] >= arr[n - 1]):                swap_Element(arr, i, n - 1)        sort_element(arr, n - 1)def printArr(arr,n):    for i in range(0, n):        print(arr[i],end=" ")arr=[]n = int(input("Enter the size of the array: "))print("Enter the Element of the array:")for i in range(0,n):    num = int(input())    arr.append(num)sort_element(arr,n)print("After ascending  order sort Array Elements are:")printArr(arr, n)
+
+
+num=int(input("Enter a number:"))
+sum=0
+for i in range(1,num):
+   if(num%i==0):
+      sum=sum+i
+if sum==num:
+   print("It is a Perfect Number")
+else:
+    print("It is not a Perfect Number") 
+
+
+print("Enter the range of number:")
+n=int(input())
+sum=0
+fact=1
+for i in range(1,n+1):
+    fact*=i
+    sum+=fact
+
+print("The sum of the series = ",sum)
+from string import ascii_lowercase as asc_lower
+def check(s):
+    return set(asc_lower) - set(s.lower()) == set([])
+strng=raw_input("Enter string:")
+if(check(strng)==True):
+      print("The string is a pangram")
+else:
+      print("The string isn't a pangram")
+
+side=int(input("Enter side of a square :"))
+area=side*side
+perimeter=4*side
+
+print("Area of the Square=",area)
+print("Perimeter of the square=",perimeter)
+#!/usr/bin/env python
+import math
+c=50
+h=30
+value = []
+items=[x for x in raw_input().split(',')]
+for d in items:
+    value.append(str(int(round(math.sqrt(2*c*float(d)/h)))))
+
+print ','.join(value)
+
+m1=float(input("Enter the first mass: "))
+m2=float(input("Enter the second mass: "))
+r=float(input("Enter the distance between the centres of the masses: "))
+G=6.673*(10**-11)
+f=(G*m1*m2)/(r**2)
+print("Hence, the gravitational force is: ",round(f,2),"N")
+
+str=input("Enter the String:")
+print("ASCII values of letters in string are:")
+for i in range(len(str)):
+    print(str[i]," ==> ",(ord)(str[i]))
+def CheckPrime(i,num):    if num==i:        return 0    else:        if(num%i==0):            return 1        else:            return CheckPrime(i+1,num)num=int(input("Enter your Number:"))if(CheckPrime(2,num)==0):    print("It is a Prime Number.")else:    print("It is not a Prime Number.")
+def Find_Factorial(len1):    fact = 1    for i in range(1, len1+1):        fact = fact * i    return factdef Find_Lexicographic_Rank(str,len1):    rank = 1    for inn in range(0, len1):        count=0        for out in range(inn+1, len1+1):            if str[inn] > str[out]:                count+=1        rank+=count*Find_Factorial(len1-inn)    return rankstr=input("Enter Your String:")print("Lexicographic Rank of given String is: ",Find_Lexicographic_Rank(str,len(str)-1))
+
+import sys
+arr=[]
+size = int(input("Enter the size of the array: "))
+print("Enter the Element of the array:")
+for i in range(0,size):
+    num = int(input())
+    arr.append(num)
+max=-sys.maxsize-1
+for j in range(0,size):
+    if (arr[j] >= max):
+        max = arr[j]
+print("The largest element of array: ",max)
+row_size=int(input("Enter the row size:"))for out in range(row_size,-(row_size+1),-1):    for inn in range(row_size,abs(out)-1,-1):        print((chr)(inn+65),end="")    print("\r")
+
+
+'''Write a Python
+program to find the nth strong number. or Write a
+program to find the nth strong number using Python '''
+
+print("Enter the Nth value:")
+rangenumber=int(input())
+num = 1
+c = 0
+letest = 0
+
+while (c != rangenumber):
+    num2 = num
+    num1 = num
+    sum = 0
+    fact = 1
+    while (num1 != 0):
+        fact = 1
+        rem = num1 % 10
+        num1 = num1 // 10
+        for j in range(1,rem+1):
+            fact = fact * j
+        sum = sum + fact
+    if (sum == num2):
+        c+=1
+        letest = num
+    num = num + 1
+print(rangenumber,"th strong number is ",letest) 
+
+
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+#Calculate sum of lower triangular matrix element
+sum=0
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        if i<j:
+            sum += matrix[i][j]
+
+# display the sum of a lower triangular matrix element
+print("Sum of Lower Triangular Matrix Elements is: ",sum)
+def insertion_sort(alist):
+    for i in range(1, len(alist)):
+        temp = alist[i]
+        j = i - 1
+        while (j >= 0 and temp < alist[j]):
+            alist[j + 1] = alist[j]
+            j = j - 1
+        alist[j + 1] = temp
+ 
+ 
+alist = input('Enter the list of numbers: ').split()
+alist = [int(x) for x in alist]
+insertion_sort(alist)
+print('Sorted list: ', end='')
+print(alist)
+
+
+'''Write a Python
+program to add between 2 numbers without using arithmetic operators.
+or Write a program to add between 2 numbers without using
+arithmetic operators using Python '''
+
+print("Enter first number:")
+num1=int(input())
+print("Enter  second number:")
+num2=int(input())
+while num2 != 0:
+       carry= num1 & num2
+       num1= num1 ^ num2
+       num2=carry << 1
+print("Addition of two number is ",num1) 
+
+
+d=float(input("Enter the Distance in Kms:"))
+t=float(input("Enter the Time in Hrs:"))
+speed=d/t
+print("Speed is ",speed," (Km/Hr)")
+
+print("Enter Binary number:")
+binary=int(input())
+decimal= 0
+temp = 0
+while (binary!=0):
+
+        reminder = binary % 10
+        binary = binary // 10
+        decimal = decimal + reminder*pow(2,temp)
+        temp=temp+1
+print("Decimal number is: ",decimal) 
+
+import math
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+# Calculate sum of the diagonals element
+# and Calculate sum of all the element
+trace=0
+sum=0
+for i in range(0, row_size):
+    for j in range(0, col_size):
+        if i==j:
+            trace += matrix[i][j]
+        sum+=matrix[i][j]
+normal=math.sqrt(sum)
+
+# Display the normal and trace of the matrix
+print("Normal Of the Matrix is: ",normal)
+print("Trace Of the Matrix is: ",trace)
+
+print("Enter the range of number:")
+n=int(input())
+sum=0.0
+fact=1
+for i in range(1,n+1):
+    fact*=i
+    sum+=fact/i
+print("The sum of the series = ",sum)
+class Graph:
+    def __init__(self):
+        # dictionary containing keys that map to the corresponding vertex object
+        self.vertices = {}
+ 
+    def add_vertex(self, key):
+        """Add a vertex with the given key to the graph."""
+        vertex = Vertex(key)
+        self.vertices[key] = vertex
+ 
+    def get_vertex(self, key):
+        """Return vertex object with the corresponding key."""
+        return self.vertices[key]
+ 
+    def __contains__(self, key):
+        return key in self.vertices
+ 
+    def add_edge(self, src_key, dest_key, weight=1):
+        """Add edge from src_key to dest_key with given weight."""
+        self.vertices[src_key].add_neighbour(self.vertices[dest_key], weight)
+ 
+    def does_edge_exist(self, src_key, dest_key):
+        """Return True if there is an edge from src_key to dest_key."""
+        return self.vertices[src_key].does_it_point_to(self.vertices[dest_key])
+ 
+    def display(self):
+        print('Vertices: ', end='')
+        for v in self:
+            print(v.get_key(), end=' ')
+        print()
+ 
+        print('Edges: ')
+        for v in self:
+            for dest in v.get_neighbours():
+                w = v.get_weight(dest)
+                print('(src={}, dest={}, weight={}) '.format(v.get_key(),
+                                                             dest.get_key(), w))
+ 
+    def __len__(self):
+        return len(self.vertices)
+ 
+    def __iter__(self):
+        return iter(self.vertices.values())
+ 
+ 
+class Vertex:
+    def __init__(self, key):
+        self.key = key
+        self.points_to = {}
+ 
+    def get_key(self):
+        """Return key corresponding to this vertex object."""
+        return self.key
+ 
+    def add_neighbour(self, dest, weight):
+        """Make this vertex point to dest with given edge weight."""
+        self.points_to[dest] = weight
+ 
+    def get_neighbours(self):
+        """Return all vertices pointed to by this vertex."""
+        return self.points_to.keys()
+ 
+    def get_weight(self, dest):
+        """Get weight of edge from this vertex to dest."""
+        return self.points_to[dest]
+ 
+    def does_it_point_to(self, dest):
+        """Return True if this vertex points to dest."""
+        return dest in self.points_to
+ 
+ 
+def mst_prim(g):
+    """Return a minimum cost spanning tree of the connected graph g."""
+    mst = Graph() # create new Graph object to hold the MST
+ 
+    # if graph is empty
+    if not g:
+        return mst
+ 
+    # nearest_neighbour[v] is the nearest neighbour of v that is in the MST
+    # (v is a vertex outside the MST and has at least one neighbour in the MST)
+    nearest_neighbour = {}
+    # smallest_distance[v] is the distance of v to its nearest neighbour in the MST
+    # (v is a vertex outside the MST and has at least one neighbour in the MST)
+    smallest_distance = {}
+    # v is in unvisited iff v has not been added to the MST
+    unvisited = set(g)
+ 
+    u = next(iter(g)) # select any one vertex from g
+    mst.add_vertex(u.get_key()) # add a copy of it to the MST
+    unvisited.remove(u)
+ 
+    # for each neighbour of vertex u
+    for n in u.get_neighbours():
+        if n is u:
+            # avoid self-loops
+            continue
+        # update dictionaries
+        nearest_neighbour[n] = mst.get_vertex(u.get_key())
+        smallest_distance[n] = u.get_weight(n)
+ 
+    # loop until smallest_distance becomes empty
+    while (smallest_distance):
+        # get nearest vertex outside the MST
+        outside_mst = min(smallest_distance, key=smallest_distance.get)
+        # get the nearest neighbour inside the MST
+        inside_mst = nearest_neighbour[outside_mst]
+ 
+        # add a copy of the outside vertex to the MST
+        mst.add_vertex(outside_mst.get_key())
+        # add the edge to the MST
+        mst.add_edge(outside_mst.get_key(), inside_mst.get_key(),
+                     smallest_distance[outside_mst])
+        mst.add_edge(inside_mst.get_key(), outside_mst.get_key(),
+                     smallest_distance[outside_mst])
+ 
+        # now that outside_mst has been added to the MST, remove it from our
+        # dictionaries and the set unvisited
+        unvisited.remove(outside_mst)
+        del smallest_distance[outside_mst]
+        del nearest_neighbour[outside_mst]
+ 
+        # update dictionaries
+        for n in outside_mst.get_neighbours():
+            if n in unvisited:
+                if n not in smallest_distance:
+                    smallest_distance[n] = outside_mst.get_weight(n)
+                    nearest_neighbour[n] = mst.get_vertex(outside_mst.get_key())
+                else:
+                    if smallest_distance[n] > outside_mst.get_weight(n):
+                        smallest_distance[n] = outside_mst.get_weight(n)
+                        nearest_neighbour[n] = mst.get_vertex(outside_mst.get_key())
+ 
+    return mst
+ 
+ 
+g = Graph()
+print('Undirected Graph')
+print('Menu')
+print('add vertex <key>')
+print('add edge <src> <dest> <weight>')
+print('mst')
+print('display')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0]
+    if operation == 'add':
+        suboperation = do[1]
+        if suboperation == 'vertex':
+            key = int(do[2])
+            if key not in g:
+                g.add_vertex(key)
+            else:
+                print('Vertex already exists.')
+        elif suboperation == 'edge':
+            src = int(do[2])
+            dest = int(do[3])
+            weight = int(do[4])
+            if src not in g:
+                print('Vertex {} does not exist.'.format(src))
+            elif dest not in g:
+                print('Vertex {} does not exist.'.format(dest))
+            else:
+                if not g.does_edge_exist(src, dest):
+                    g.add_edge(src, dest, weight)
+                    g.add_edge(dest, src, weight)
+                else:
+                    print('Edge already exists.')
+ 
+    elif operation == 'mst':
+        mst = mst_prim(g)
+        print('Minimum Spanning Tree:')
+        mst.display()
+        print()
+ 
+    elif operation == 'display':
+        g.display()
+        print()
+ 
+    elif operation == 'quit':
+        break
+for i in range(1,101):
+    print(i,end=" ")
+class Tree:
+    def __init__(self, data=None):
+        self.key = data
+        self.children = []
+ 
+    def set_root(self, data):
+        self.key = data
+ 
+    def add(self, node):
+        self.children.append(node)
+ 
+    def search(self, key):
+        if self.key == key:
+            return self
+        for child in self.children:
+            temp = child.search(key)
+            if temp is not None:
+                return temp
+        return None
+ 
+    def sum_nodes(self):
+        summation = self.key
+        for child in self.children:
+            summation = summation + child.sum_nodes()
+        return summation
+ 
+ 
+tree = None
+ 
+print('Menu (this assumes no duplicate keys)')
+print('add <data> at root')
+print('add <data> below <data>')
+print('sum')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'add':
+        data = int(do[1])
+        new_node = Tree(data)
+        suboperation = do[2].strip().lower() 
+        if suboperation == 'at':
+            tree = new_node
+        elif suboperation == 'below':
+            position = do[3].strip().lower()
+            key = int(position)
+            ref_node = None
+            if tree is not None:
+                ref_node = tree.search(key)
+            if ref_node is None:
+                print('No such key.')
+                continue
+            ref_node.add(new_node)
+ 
+    elif operation == 'sum':
+        if tree is None:
+            print('Tree is empty.')
+        else:
+            summation = tree.sum_nodes()
+            print('Sum of all nodes: {}'.format(summation))
+ 
+    elif operation == 'quit':
+        break
+row_size=int(input("Enter the row size:"))for out in range(row_size,0,-1):    for inn in range(row_size,out,-1):        print(" ",end="")    for p in range(out,0,-1):        print(out,end=" ")    print("\r")
+
+print("Enter the range of number(Limit):")
+n=int(input())
+i=1
+sum=0.0
+while(i<=n):
+    if(i%2==0):
+        sum-=i/(i+1)
+    else:
+        sum+=i/(i+1)
+    i+=1
+print("The sum of the series = ",sum)
+
+num=int(input("Enter a number:"))
+sum=0
+while sum != 1 and sum != 4:
+    sum=0
+    while num!=0:
+        rem = num % 10
+        sum += (rem*rem)
+        num //= 10
+    num=sum
+
+if sum==1:
+    print("It is a Happy Number.")
+else:
+   print("It is  an Unhappy Number.")
+
+str=input("Enter the String:")
+print("Your Enter String is:", len(str))
+string=raw_input("Enter string:")
+string=string.replace(' ','-')
+print("Modified string:")
+print(string)
+a=[]
+n= int(input("Enter the number of elements in list:"))
+for x in range(0,n):
+    element=int(input("Enter element" + str(x+1) + ":"))
+    a.append(element)
+b=[sum(a[0:x+1]) for x in range(0,len(a))]
+print("The original list is: ",a)
+print("The new list is: ",b)
+
+basic=float(input("Enter the basic salary of an employee:"))
+da = (float)(15 * basic) / 100.0
+hr = (float)(10 * basic) / 100.0
+da_on_ta = (float)(3 * basic) / 100.0
+gross = basic + da + hr + da_on_ta
+print("Gross salary of an Employee= ",gross)
+def cut_rod(p, n):
+    """Take a list p of prices and the rod length n and return lists r and s.
+    r[i] is the maximum revenue that you can get and s[i] is the length of the
+    first piece to cut from a rod of length i."""
+    # r[i] is the maximum revenue for rod length i
+    # r[i] = -1 means that r[i] has not been calculated yet
+    r = [-1]*(n + 1)
+    r[0] = 0
+ 
+    # s[i] is the length of the initial cut needed for rod length i
+    # s[0] is not needed
+    s = [-1]*(n + 1)
+ 
+    for i in range(1, n + 1):
+        q = -1
+        for j in range(1, i + 1):
+            temp = p[j] + r[i - j]
+            if q < temp:
+                q = temp
+                s[i] = j
+        r[i] = q
+ 
+    return r, s
+ 
+ 
+n = int(input('Enter the length of the rod in inches: '))
+ 
+# p[i] is the price of a rod of length i
+# p[0] is not needed, so it is set to None
+p = [None]
+for i in range(1, n + 1):
+    price = input('Enter the price of a rod of length {} in: '.format(i))
+    p.append(int(price))
+ 
+r, s = cut_rod(p, n)
+print('The maximum revenue that can be obtained:', r[n])
+print('The rod needs to be cut into length(s) of ', end='')
+while n > 0:
+    print(s[n], end=' ')
+    n -= s[n]
+def is_palindrome(s):
+    if len(s) < 1:
+        return True
+    else:
+        if s[0] == s[-1]:
+            return is_palindrome(s[1:-1])
+        else:
+            return False
+a=str(input("Enter string:"))
+if(is_palindrome(a)==True):
+    print("String is a palindrome!")
+else:
+    print("String isn't a palindrome!")
+n=int(input("Enter the range of number:"))sum=0for i in range(1,n+1):    sum+=pow(i,3)print("The sum of the series = ",sum)
+
+n=int(input("Enter the n Value:"))
+x=int(input("Enter the x value:"))
+fact=1
+for i in range(1,n+1):
+    fact*=i
+result=pow(x,n)/fact
+print("Result(x^n/n!)= ",result)
+
+
+
+print("Enter a HexaDecimal number:")
+hex=input()
+binary=""
+i=0
+j=1
+for i in range(0,len(hex)):
+    if hex[i]=='F' :
+        binary=binary+"1111"
+    elif hex[i]=="E":
+        binary=binary+"1110"
+    elif hex[i]=="D":
+        binary=binary+"1101"
+    elif hex[i]=="C":
+        binary=binary+"1100"
+    elif hex[i]=="B":
+        binary=binary+"1011"
+    elif hex[i]=="A":
+        binary=binary+"1010"
+    else:
+        st=hex[i:i+1]
+        decimal=0
+        temp=1
+        hexnum=int(st)
+        while hexnum!=0:
+            remainder=hexnum%2
+            hexnum=hexnum//2
+            decimal=decimal+remainder*temp
+            temp=temp*10
+        str1=str(decimal)
+        if len(str1)==3:
+            str1="0"+str1
+        if len(str1)==2:
+            str1="00"+str1
+        if len(str1)==1:
+            str1="000"+str1
+        binary=binary+str1
+print("HexaDecimal to Binary is",binary)
+
+def square(num):
+    return num ** 2
+
+print square(2)
+print square(3)
+
+
+print("Enter a range:")
+range1=int(input())
+range2=int(input())
+print("Happy numbers between ",range1," and ",range2," are: ")
+for i in range(range1,range2+1):
+    num=i
+    sum=0
+    while sum != 1 and sum != 4:
+        sum = 0
+        while num != 0:
+            rem = num % 10
+            sum += (rem * rem)
+            num //= 10
+        num = sum
+
+    if sum == 1:
+        print(i,end=" ")
+class BinaryTree:
+    def __init__(self, key=None):
+        self.key = key
+        self.left = None
+        self.right = None
+ 
+    def set_root(self, key):
+        self.key = key
+ 
+    def inorder(self):
+        if self.left is not None:
+            self.left.inorder()
+        print(self.key, end=' ')
+        if self.right is not None:
+            self.right.inorder()
+ 
+    def insert_left(self, new_node):
+        self.left = new_node
+ 
+    def insert_right(self, new_node):
+        self.right = new_node
+ 
+    def search(self, key):
+        if self.key == key:
+            return self
+        if self.left is not None:
+            temp =  self.left.search(key)
+            if temp is not None:
+                return temp
+        if self.right is not None:
+            temp =  self.right.search(key)
+            return temp
+        return None
+ 
+    def print_left(self):
+        if self.left is not None:
+            self.left.inorder()
+ 
+ 
+btree = None
+ 
+print('Menu (this assumes no duplicate keys)')
+print('insert <data> at root')
+print('insert <data> left of <data>')
+print('insert <data> right of <data>')
+print('left')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'insert':
+        data = int(do[1])
+        new_node = BinaryTree(data)
+        suboperation = do[2].strip().lower() 
+        if suboperation == 'at':
+                btree = new_node
+        else:
+            position = do[4].strip().lower()
+            key = int(position)
+            ref_node = None
+            if btree is not None:
+                ref_node = btree.search(key)
+            if ref_node is None:
+                print('No such key.')
+                continue
+            if suboperation == 'left':
+                ref_node.insert_left(new_node)
+            elif suboperation == 'right':
+                ref_node.insert_right(new_node)
+ 
+    elif operation == 'left':
+        print('Nodes of left subtree: ', end='')
+        if btree is not None:
+            btree.print_left()
+        print()
+ 
+    elif operation == 'quit':
+        break
+
+arr=[]
+cout=0
+sum=0
+size = int(input("Enter the size of the array: "))
+print("Enter the Element of the array:")
+for i in range(0,size):
+    num = int(input())
+    arr.append(num)
+for j in range(0, size):
+    if ((j+1) % 2 == 1):
+        sum += arr[j]
+        cout+=1
+avg = (sum / cout)
+print("Average of Numbers in array at odd position is ", avg)
+
+set1=set([1,3,6,78,35,55])
+set2=set([12,24,35,24,88,120,155])
+set1 &= set2
+li=list(set1)
+print li
+
+
+sum=0def SumOfArray(arr,n):    global sum    if(n>0):        i=n-1        sum=sum+arr[i]        SumOfArray(arr,i)    return sumarr=[]n = int(input("Enter the size of the array: "))print("Enter the Element of the array:")for i in range(0,n):    num = int(input())    arr.append(num)print("Sum of Array Element is:",SumOfArray(arr,n))
+
+arr=[]
+size = int(input("Enter the size of the array: "))
+print("Enter the Element of the array:")
+for i in range(0,size):
+    num = float(input())
+    arr.append(num)
+sum_pos=0.0
+sum_neg=0.0
+for j in range(0,size):
+        if (arr[j] > 0):
+            sum_pos += arr[j]
+        else:
+            sum_neg += arr[j]
+print("sum of positive number : ",sum_pos)
+print("sum of Negative number : ",sum_neg)
+ 
+n = int(input("Enter any number: "))
+sum1 = 0
+for i in range(1, n):
+    if(n % i == 0):
+        sum1 = sum1 + i
+if (sum1 == n):
+    print("The number is a Perfect number!")
+else:
+    print("The number is not a Perfect number!")
+def is_power_of_two(n):
+    """Return True if n is a power of two."""
+    if n <= 0:
+        return False
+    else:
+        return n & (n - 1) == 0
+ 
+ 
+n = int(input('Enter a number: '))
+ 
+if is_power_of_two(n):
+    print('{} is a power of two.'.format(n))
+else:
+    print('{} is not a power of two.'.format(n))
+def select(alist, start, end, i):
+    """Find ith smallest element in alist[start... end-1]."""
+    if end - start <= 1:
+        return alist[start]
+    pivot = partition(alist, start, end)
+ 
+    # number of elements in alist[start... pivot]
+    k = pivot - start + 1
+ 
+    if i < k:
+        return select(alist, start, pivot, i)
+    elif i > k:
+        return select(alist, pivot + 1, end, i - k)
+ 
+    return alist[pivot]
+ 
+def partition(alist, start, end):
+    pivot = alist[start]
+    i = start + 1
+    j = end - 1
+ 
+    while True:
+        while (i <= j and alist[i] <= pivot):
+            i = i + 1
+        while (i <= j and alist[j] >= pivot):
+            j = j - 1
+ 
+        if i <= j:
+            alist[i], alist[j] = alist[j], alist[i]
+        else:
+            alist[start], alist[j] = alist[j], alist[start]
+            return j
+ 
+ 
+alist = input('Enter the list of numbers: ')
+alist = alist.split()
+alist = [int(x) for x in alist]
+i = int(input('The ith smallest element will be found. Enter i: '))
+ 
+ith_smallest_item = select(alist, 0, len(alist), i)
+print('Result: {}.'.format(ith_smallest_item))
+print("Printing A-Z using ASCII")
+for i in range(65,90+1):
+    print(chr(i),end=" ")
+
+
+print("Enter the range of number:")
+
+n=int(input())
+sum=0
+i=1
+while(i<=n):
+    sum+=i
+    i+=2
+print("The sum of the series = ",sum)
+str=input("Enter Your String:")min=999arr=[0]*256for i in range(len(str)):    if str[i]==' ':        continue    num=ord(str[i])    arr[num]+=1ch=' 'for i in range(len(str)):    if arr[ord(str[i])] != 0:        if arr[ord(str[i])] <= min:            min = arr[ord(str[i])]            ch=str[i]print("The Minimum occurring character in a string is ",ch)
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the 1st matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+matrix1=[]
+# Taking input of the 2nd matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix1.append([int(j) for j in input().split()])
+
+# Compute Subtraction of two matrices
+sub_matrix=[[0 for i in range(col_size)] for i in range(row_size)]
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        sub_matrix[i][j]=matrix[i][j]-matrix1[i][j]
+
+# display the Subtraction of two matrices
+print("Subtraction of the two Matrices is:")
+for m in sub_matrix:
+    print(m)
+Solution
+def printTuple():
+	li=list()
+	for i in range(1,21):
+		li.append(i**2)
+	print tuple(li)
+		
+printTuple()
+
+
+
+
+class sub:  
+    def f1(self, s1):  
+        return self.f2([], sorted(s1))  
+ 
+    def f2(self, curr, s1):  
+        if s1:  
+            return self.f2(curr, s1[1:]) + self.f2(curr + [s1[0]], s1[1:])  
+        return [curr]  
+a=[]
+n=int(input("Enter number of elements of list: "))
+for i in range(0,n):
+    b=int(input("Enter element: "))
+    a.append(b)
+print("Subsets: ")
+print(sub().f1(a))
+from math import factorial
+ 
+def print_permutations_lexicographic_order(s):
+    """Print all permutations of string s in lexicographic order."""
+    seq = list(s)
+    for _ in range(factorial(len(seq))):
+        print(''.join(seq))
+        nxt = get_next_permutation(seq)
+        # if seq is the highest permutation
+        if nxt is None:
+            # then reverse it
+            seq.reverse()
+        else:
+            seq = nxt
+ 
+def get_next_permutation(seq):
+    """Return next greater lexicographic permutation. Return None if cannot.
+ 
+    This will return the next greater permutation of seq in lexicographic
+    order. If seq is the highest permutation then this will return None.
+ 
+    seq is a list.
+    """
+    if len(seq) == 0:
+        return None
+ 
+    nxt = get_next_permutation(seq[1:])
+ 
+    # if seq[1:] is the highest permutation
+    if nxt is None:
+        # reverse seq[1:], so that seq[1:] now is in ascending order
+        seq[1:] = reversed(seq[1:])
+ 
+        # find q such that seq[q] is the smallest element in seq[1:] such that
+        # seq[q] > seq[0]
+        q = 1
+        while q < len(seq) and seq[0] > seq[q]:
+            q += 1
+ 
+        # if cannot find q, then seq is the highest permutation
+        if q == len(seq):
+            return None
+ 
+        # swap seq[0] and seq[q]
+        seq[0], seq[q] = seq[q], seq[0]
+ 
+        return seq
+    else:
+        return [seq[0]] + nxt
+ 
+ 
+s = input('Enter the string: ')
+print_permutations_lexicographic_order(s)
+def remove(string, n):  
+      first = string[:n]   
+      last = string[n+1:]  
+      return first + last
+string=raw_input("Enter the sring:")
+n=int(input("Enter the index of the character to remove:"))
+print("Modified string:")
+print(remove(string, n))
+
+
+'''Write a Python
+program to find the nth prime number. or Write a
+program to find the nth prime number using Python '''
+
+
+print("Enter Nth Number:")
+rangenumber=int(input())
+c = 0
+num = 2
+letest = 0
+
+while (c != rangenumber):
+   count = 0
+   for i in range(2,num):
+      if (num % i == 0):
+         count+=1
+         break
+   if (count == 0):
+      c+=1
+      letest = num
+   num = num + 1
+print (rangenumber,"th prime number is ",letest)
+
+str=input("Enter Your String:")ch=input("Enter the Character:")sub_str=str.split(" ")print("All the words ending with ",ch," are:")for inn in range(0,len(sub_str)):    if sub_str[inn].endswith(ch):        print(sub_str[inn],end=" ")
+def linear_search(alist, key):
+    """Return index of key in alist. Return -1 if key not present."""
+    for i in range(len(alist)):
+        if alist[i] == key:
+            return i
+    return -1
+ 
+ 
+alist = input('Enter the list of numbers: ')
+alist = alist.split()
+alist = [int(x) for x in alist]
+key = int(input('The number to search for: '))
+ 
+index = linear_search(alist, key)
+if index < 0:
+    print('{} was not found.'.format(key))
+else:
+    print('{} was found at index {}.'.format(key, index))
+class QueenChessBoard:
+    def __init__(self, size):
+        # board has dimensions size x size
+        self.size = size
+        # columns[r] is a number c if a queen is placed at row r and column c.
+        # columns[r] is out of range if no queen is place in row r.
+        # Thus after all queens are placed, they will be at positions
+        # (columns[0], 0), (columns[1], 1), ... (columns[size - 1], size - 1)
+        self.columns = []
+ 
+    def get_size(self):
+        return self.size
+ 
+    def get_queens_count(self):
+        return len(self.columns)
+ 
+    def place_in_next_row(self, column):
+        self.columns.append(column)
+ 
+    def remove_in_current_row(self):
+        return self.columns.pop()
+ 
+    def is_this_column_safe_in_next_row(self, column):
+        # index of next row
+        row = len(self.columns)
+ 
+        # check column
+        for queen_column in self.columns:
+            if column == queen_column:
+                return False
+ 
+        # check diagonal
+        for queen_row, queen_column in enumerate(self.columns):
+            if queen_column - queen_row == column - row:
+                return False
+ 
+        # check other diagonal
+        for queen_row, queen_column in enumerate(self.columns):
+            if ((self.size - queen_column) - queen_row
+                == (self.size - column) - row):
+                return False
+ 
+        return True
+ 
+    def display(self):
+        for row in range(self.size):
+            for column in range(self.size):
+                if column == self.columns[row]:
+                    print('Q', end=' ')
+                else:
+                    print('.', end=' ')
+            print()
+ 
+ 
+def print_all_solutions_to_n_queen(size):
+    """Display a chessboard for each possible configuration of placing n queens
+    on an n x n chessboard where n = size and print the number of such
+    configurations."""
+    board = QueenChessBoard(size)
+    number_of_solutions = print_all_solutions_helper(board)
+    print('Number of solutions:', number_of_solutions)
+ 
+def print_all_solutions_helper(board):
+    """Display a chessboard for each possible configuration of filling the given
+    board with queens and return the number of such configurations."""
+    size = board.get_size()
+ 
+    # if board is full, display solution
+    if size == board.get_queens_count():
+        board.display()
+        print()
+        return 1
+ 
+    number_of_solutions = 0
+    # place queen in next row
+    for column in range(size):
+        if board.is_this_column_safe_in_next_row(column):
+            board.place_in_next_row(column)
+            number_of_solutions += print_all_solutions_helper(board)
+            board.remove_in_current_row()
+ 
+    return number_of_solutions
+ 
+ 
+n = int(input('Enter n: '))
+print_all_solutions_to_n_queen(n)
+a=[]
+n= int(input("Enter the number of elements in list:"))
+for x in range(0,n):
+    element=int(input("Enter element" + str(x+1) + ":"))
+    a.append(element)
+temp=a[0]
+a[0]=a[n-1]
+a[n-1]=temp
+print("New list is:")
+print(a)
+
+print("Enter the row and column size:")
+row_size=input()
+for out in range(ord('A'),ord(row_size)+1):
+    for i in range(ord('A'),ord(row_size)+1):
+        print(chr(out),end="")
+    print("\r")
+
+print("Enter a Decimal Number: ")
+decimal=int(input())
+binary = 0
+temp = 1
+while (decimal != 0):
+    reminder = decimal % 2
+    decimal = decimal // 2
+    binary =int (binary + (reminder * temp))
+    temp =int( temp * 10)
+
+print("The Binary Number is: ",binary)
+
+
+def SumOfDigits(num):    if num==0:        return 0    else:        return ((num%10) +SumOfDigits(num//10))num=int(input("Enter the Number:"))print("Sum of digits of given Number Using Recursion is:",SumOfDigits(num))
+str=input("Enter Your String:")count=0for inn in range(0,len(str)):    if str[inn] >= '0' and  str[inn] <= '9':        count+=1if count>=1:    print("String contains at least one digits.")else:    print("String does not contains at least one digits.")
+Solution
+def printDict():
+	d=dict()
+	for i in range(1,21):
+		d[i]=i**2
+	for (k,v) in d.items():	
+		print v
+		
+
+printDict()
+
+
+
+print("Enter the range of number(Limit):")
+n=int(input())
+i=1
+se=1
+while(i<=n):
+    if(i%2==0):
+        print(se,end=" ")
+    else:
+        print(-1*se, end=" ")
+    se+=3
+    i+=1
+def fibonacci(n):
+    """Return the nth Fibonacci number."""
+    if n == 0:
+        return 0
+ 
+    # r[i] will contain the ith Fibonacci number
+    r = [-1]*(n + 1)
+    r[0] = 0
+    r[1] = 1
+ 
+    for i in range(2, n + 1):
+        r[i] = r[i - 1] + r[i - 2]
+ 
+    return r[n]
+ 
+ 
+n = int(input('Enter n: '))
+ 
+ans = fibonacci(n)
+print('The nth Fibonacci number:', ans)
+
+str=input("Enter the String:")
+ch=' '
+for i in range(len(str)):
+    if str[i] >= 'a' and str[i] <= 'z':
+        ch = str[i]
+        break
+    else:
+        continue
+print("First small letter in a given String is: ", ch)
+
+
+import math
+print("Enter the length of the side:")
+a=int(input())
+area=(2*(1+math.sqrt(2))*math.pow(a,2))
+perimeter=(8*a)
+print("Area of the Octagon = ",area)
+print("Perimeter of the Octagon = ",perimeter)
+
+ 
+n=int(input("Enter number:"))
+temp=n
+rev=0
+while(n>0):
+    dig=n%10
+    rev=rev*10+dig
+    n=n//10
+if(temp==rev):
+    print("The number is a palindrome!")
+else:
+    print("The number isn't a palindrome!")
+def MultiplicationTable(num, i):    print(num," X ",i," = ",num * i)    if (i < 10):        MultiplicationTable(num, i + 1)num=int(input("Enter a number:"))print("Multiplication Table of ",num," is:")MultiplicationTable(num, 1)
+string=raw_input("Enter string:")
+count=0
+for i in string:
+      count=count+1
+new=string[0:2]+string[count-2:count]
+print("Newly formed string is:")
+print(new)
+
+
+print("Enter the range of number:")
+n=int(input())
+print("Enter the value of x:");
+x=int(input())
+sum=0
+i=1
+while(i<=n):
+    sum+=pow(x,i)
+    i+=2print("The sum of the series = ",sum)
+
+print("Enter the First Number:")
+first_num=int(input())
+print("Enter the range of number(Limit):")
+n=int(input())
+print("Enter the Difference Between two Number:")
+diff=int(input())
+while(first_num<=n):
+     print(first_num,end=" ")
+     first_num+=diff
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the 1st matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+# check Diagonal elements are 1 and rest elements are 0
+point=0
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        # check for diagonals element
+        if i == j and matrix[i][j] != 1:
+            point=1
+            break
+        #check for rest elements
+        elif i!=j and matrix[i][j]!=0:
+            point=1
+            break
+
+if point==1:
+    print("Given Matrix is not an identity matrix.")
+else:
+    print("Given Matrix is an identity matrix.")
+
+ch=input("Enter a character:")
+ascii=ord(ch) #ord is used for returning the ASCII value a character, ord stands for ordinal
+print("The ASCII value is",ascii)
+def Subtraction(num1,num2):    if num2==0:        return num1    return Subtraction(num1-1, num2-1)print("Enter the two Number:")num1=int(input())num2=int(input())print("Subtraction of Two Number Using Recursion is: ",Subtraction(num1,num2))
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the 1st matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+matrix1=[]
+# Taking input of the 2nd matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix1.append([int(j) for j in input().split()])
+
+# Compute Subtraction of two matrices
+sub_matrix=[[0 for i in range(col_size)] for i in range(row_size)]
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        sub_matrix[i][j]=matrix[i][j]-matrix1[i][j]
+
+# display the Subtraction of two matrices
+print("Subtraction of the two Matrices is:")
+for m in sub_matrix:
+    print(m)
+class Graph:
+    def __init__(self):
+        # dictionary containing keys that map to the corresponding vertex object
+        self.vertices = {}
+ 
+    def add_vertex(self, key):
+        """Add a vertex with the given key to the graph."""
+        vertex = Vertex(key)
+        self.vertices[key] = vertex
+ 
+    def get_vertex(self, key):
+        """Return vertex object with the corresponding key."""
+        return self.vertices[key]
+ 
+    def __contains__(self, key):
+        return key in self.vertices
+ 
+    def add_edge(self, src_key, dest_key, weight=1):
+        """Add edge from src_key to dest_key with given weight."""
+        self.vertices[src_key].add_neighbour(self.vertices[dest_key], weight)
+ 
+    def add_undirected_edge(self, v1_key, v2_key, weight=1):
+        """Add undirected edge (2 directed edges) between v1_key and v2_key with
+        given weight."""
+        self.add_edge(v1_key, v2_key, weight)
+        self.add_edge(v2_key, v1_key, weight)
+ 
+    def does_undirected_edge_exist(self, v1_key, v2_key):
+        """Return True if there is an undirected edge between v1_key and v2_key."""
+        return (self.does_edge_exist(v1_key, v2_key)
+                and self.does_edge_exist(v1_key, v2_key))
+ 
+    def does_edge_exist(self, src_key, dest_key):
+        """Return True if there is an edge from src_key to dest_key."""
+        return self.vertices[src_key].does_it_point_to(self.vertices[dest_key])
+ 
+    def __iter__(self):
+        return iter(self.vertices.values())
+ 
+ 
+class Vertex:
+    def __init__(self, key):
+        self.key = key
+        self.points_to = {}
+ 
+    def get_key(self):
+        """Return key corresponding to this vertex object."""
+        return self.key
+ 
+    def add_neighbour(self, dest, weight):
+        """Make this vertex point to dest with given edge weight."""
+        self.points_to[dest] = weight
+ 
+    def get_neighbours(self):
+        """Return all vertices pointed to by this vertex."""
+        return self.points_to.keys()
+ 
+    def get_weight(self, dest):
+        """Get weight of edge from this vertex to dest."""
+        return self.points_to[dest]
+ 
+    def does_it_point_to(self, dest):
+        """Return True if this vertex points to dest."""
+        return dest in self.points_to
+ 
+ 
+class Queue:
+    def __init__(self):
+        self.items = []
+ 
+    def is_empty(self):
+        return self.items == []
+ 
+    def enqueue(self, data):
+        self.items.append(data)
+ 
+    def dequeue(self):
+        return self.items.pop(0)
+ 
+ 
+def is_bipartite(vertex, visited):
+    """Return True if component containing vertex is bipartite and put all
+    vertices in its component in set visited."""
+    colour = {vertex: 0}
+    visited.add(vertex)
+    q = Queue()
+    q.enqueue(vertex)
+    while not q.is_empty():
+        current = q.dequeue()
+ 
+        next_colour = 1 - colour[current] # switch colour
+        for dest in current.get_neighbours():
+            if dest not in visited:
+                visited.add(dest)
+                colour[dest] = next_colour
+                q.enqueue(dest)
+            else:
+                if colour[dest] != next_colour:
+                    return False
+    return True
+ 
+ 
+g = Graph()
+print('Undirected Graph')
+print('Menu')
+print('add vertex <key>')
+print('add edge <vertex1> <vertex2>')
+print('bipartite')
+print('display')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0]
+    if operation == 'add':
+        suboperation = do[1]
+        if suboperation == 'vertex':
+            key = int(do[2])
+            if key not in g:
+                g.add_vertex(key)
+            else:
+                print('Vertex already exists.')
+        elif suboperation == 'edge':
+            v1 = int(do[2])
+            v2 = int(do[3])
+            if v1 not in g:
+                print('Vertex {} does not exist.'.format(v1))
+            elif v2 not in g:
+                print('Vertex {} does not exist.'.format(v2))
+            else:
+                if not g.does_undirected_edge_exist(v1, v2):
+                    g.add_undirected_edge(v1, v2)
+                else:
+                    print('Edge already exists.')
+ 
+    elif operation == 'bipartite':
+        bipartite = True
+        visited = set()
+        for v in g:
+            if v not in visited:
+                if not is_bipartite(v, visited):
+                    bipartite = False
+                    break
+ 
+        if bipartite:
+            print('Graph is bipartite.')
+        else:
+            print('Graph is not bipartite.')
+ 
+    elif operation == 'display':
+        print('Vertices: ', end='')
+        for v in g:
+            print(v.get_key(), end=' ')
+        print()
+ 
+        print('Edges: ')
+        for v in g:
+            for dest in v.get_neighbours():
+                w = v.get_weight(dest)
+                print('(src={}, dest={}, weight={}) '.format(v.get_key(),
+                                                             dest.get_key(), w))
+        print()
+ 
+    elif operation == 'quit':
+        break
+
+print("Enter the range of number(Limit):")
+n=int(input())
+i=1
+sum=0.0
+while(i<=n):
+    sum+=1/i
+    i+=2
+print("The sum of the series = ",sum)
+values = raw_input()
+numbers = [x for x in values.split(",") if int(x)%2!=0]
+print ",".join(numbers)
+
+a=[]
+n=int(input("Enter number of elements:"))
+for i in range(1,n+1):
+    b=int(input("Enter element:"))
+    a.append(b)
+a.sort()
+print("Second largest element is:",a[n-2])
+arr=[]size = int(input("Enter the size of the array: "))print("Enter the Element of the array:")for i in range(0,size):    num = int(input())    arr.append(num)First_element=arr[0]Second_element=arr[1]Max_Product=First_element*Second_elementfor i in range(0,size-1):    for j in range(i+1, size):        product = arr[i] * arr[j]        if abs(product) >= abs(Max_Product):            Max_Product =product            First_element = arr[i]            Second_element = arr[j]print("Pair of Maximum Product is (",First_element,",",Second_element,")")print("\nMaximum Product of 2 numbers is ",Max_Product)
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+
+#Display Upper triangular matrix
+print("Upper Triangular Matrix is:")
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        if i>j:
+            print("0 ",end="")
+        else:
+            print(matrix[i][j],end=" ")
+    print()
+class Graph:
+    def __init__(self):
+        # dictionary containing keys that map to the corresponding vertex object
+        self.vertices = {}
+ 
+    def add_vertex(self, key):
+        """Add a vertex with the given key to the graph."""
+        vertex = Vertex(key)
+        self.vertices[key] = vertex
+ 
+    def get_vertex(self, key):
+        """Return vertex object with the corresponding key."""
+        return self.vertices[key]
+ 
+    def __contains__(self, key):
+        return key in self.vertices
+ 
+    def add_edge(self, src_key, dest_key, weight=1):
+        """Add edge from src_key to dest_key with given weight."""
+        self.vertices[src_key].add_neighbour(self.vertices[dest_key], weight)
+ 
+    def does_vertex_exist(self, key):
+        return key in self.vertices
+ 
+    def does_edge_exist(self, src_key, dest_key):
+        """Return True if there is an edge from src_key to dest_key."""
+        return self.vertices[src_key].does_it_point_to(self.vertices[dest_key])
+ 
+    def display(self):
+        print('Vertices: ', end='')
+        for v in self:
+            print(v.get_key(), end=' ')
+        print()
+ 
+        print('Edges: ')
+        for v in self:
+            for dest in v.get_neighbours():
+                w = v.get_weight(dest)
+                print('(src={}, dest={}, weight={}) '.format(v.get_key(),
+                                                             dest.get_key(), w))
+ 
+    def __len__(self):
+        return len(self.vertices)
+ 
+    def __iter__(self):
+        return iter(self.vertices.values())
+ 
+ 
+class Vertex:
+    def __init__(self, key):
+        self.key = key
+        self.points_to = {}
+ 
+    def get_key(self):
+        """Return key corresponding to this vertex object."""
+        return self.key
+ 
+    def add_neighbour(self, dest, weight):
+        """Make this vertex point to dest with given edge weight."""
+        self.points_to[dest] = weight
+ 
+    def get_neighbours(self):
+        """Return all vertices pointed to by this vertex."""
+        return self.points_to.keys()
+ 
+    def get_weight(self, dest):
+        """Get weight of edge from this vertex to dest."""
+        return self.points_to[dest]
+ 
+    def does_it_point_to(self, dest):
+        """Return True if this vertex points to dest."""
+        return dest in self.points_to
+ 
+ 
+def mst_krusal(g):
+    """Return a minimum cost spanning tree of the connected graph g."""
+    mst = Graph() # create new Graph object to hold the MST
+ 
+    if len(g) == 1:
+        u = next(iter(g)) # get the single vertex
+        mst.add_vertex(u.get_key()) # add a copy of it to mst
+        return mst
+ 
+    # get all the edges in a list
+    edges = []
+    for v in g:
+        for n in v.get_neighbours():
+            # avoid adding two edges for each edge of the undirected graph
+            if v.get_key() < n.get_key():
+                edges.append((v, n))
+ 
+    # sort edges
+    edges.sort(key=lambda edge: edge[0].get_weight(edge[1]))
+ 
+    # initially, each vertex is in its own component
+    component = {}
+    for i, v in enumerate(g):
+        component[v] = i
+ 
+    # next edge to try
+    edge_index = 0
+ 
+    # loop until mst has the same number of vertices as g
+    while len(mst) < len(g):
+        u, v = edges[edge_index]
+        edge_index += 1
+ 
+        # if adding edge (u, v) will not form a cycle
+        if component[u] != component[v]:
+ 
+            # add to mst
+            if not mst.does_vertex_exist(u.get_key()):
+                mst.add_vertex(u.get_key())
+            if not mst.does_vertex_exist(v.get_key()):
+                mst.add_vertex(v.get_key())
+            mst.add_edge(u.get_key(), v.get_key(), u.get_weight(v))
+            mst.add_edge(v.get_key(), u.get_key(), u.get_weight(v))
+ 
+            # merge components of u and v
+            for w in g:
+                if component[w] == component[v]:
+                    component[w] = component[u]
+ 
+    return mst
+ 
+ 
+g = Graph()
+print('Undirected Graph')
+print('Menu')
+print('add vertex <key>')
+print('add edge <src> <dest> <weight>')
+print('mst')
+print('display')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0]
+    if operation == 'add':
+        suboperation = do[1]
+        if suboperation == 'vertex':
+            key = int(do[2])
+            if key not in g:
+                g.add_vertex(key)
+            else:
+                print('Vertex already exists.')
+        elif suboperation == 'edge':
+            src = int(do[2])
+            dest = int(do[3])
+            weight = int(do[4])
+            if src not in g:
+                print('Vertex {} does not exist.'.format(src))
+            elif dest not in g:
+                print('Vertex {} does not exist.'.format(dest))
+            else:
+                if not g.does_edge_exist(src, dest):
+                    g.add_edge(src, dest, weight)
+                    g.add_edge(dest, src, weight)
+                else:
+                    print('Edge already exists.')
+ 
+    elif operation == 'mst':
+        mst = mst_krusal(g)
+        print('Minimum Spanning Tree:')
+        mst.display()
+        print()
+ 
+    elif operation == 'display':
+        g.display()
+        print()
+ 
+    elif operation == 'quit':
+        break
+
+num=int(input("Enter a number:"))
+num1=num
+#Sum of digit
+sum=0
+while num1!=0:
+        rem=num1%10
+        sum+=rem
+        num1//=10
+#Reverse of sum
+rev=0
+num2=sum
+while num2!=0:
+    rem2=num2%10
+    rev=rev*10+rem2
+    num2//=10
+
+if sum*rev==num:
+   print("It is a Magic Number.")
+else:
+   print("It is not a Magic Number.")
+n=int(input("Enter the range of number:"))sum=0for i in range(2,n+2):    sum+=1+(i*(i-1))print("The sum of the series = ",sum)
+def eliminate_non_celebrities(matrix):
+    """Take an n x n matrix that has m[i][j] = True iff i knows j and return
+    person who is maybe a celebrity."""
+    possible_celeb = 0
+    n = len(matrix)
+    for p in range(1, n):
+        if (matrix[possible_celeb][p]
+            or not matrix[p][possible_celeb]):
+            possible_celeb = p
+    return possible_celeb
+ 
+ 
+def check_if_celebrity(possible_celeb, matrix):
+    """Take an n x n matrix that has m[i][j] = True iff i knows j and return
+    True if possible_celeb is a celebrity."""
+    for i in range(n):
+        if matrix[possible_celeb][i] is True:
+            return False
+ 
+    for i in range(n):
+        if matrix[i][possible_celeb] is False:
+            if i != possible_celeb:
+                return False
+ 
+    return True
+ 
+ 
+n = int(input('Number of people: '))
+ 
+# create n x n matrix initialized to False that has m[i][j] = True iff i knows j
+m = [[False]*n for _ in range(n)]
+ 
+for i in range(n):
+    people = input('Enter list of people known to {}: '.format(i)).split()
+    for p in people:
+        p = int(p)
+        m[i][p] = True
+ 
+possible_celeb = eliminate_non_celebrities(m)
+ 
+if check_if_celebrity(possible_celeb, m):
+    print('{} is the celebrity.'.format(possible_celeb))
+else:
+    print('There is no celebrity.')
+n=int(input("Enter a number: "))
+sum1 = 0
+while(n > 0):
+    sum1=sum1+n
+    n=n-1
+print("The sum of first n natural numbers is",sum1)
+def selection_sort(alist):
+    for i in range(0, len(alist) - 1):
+        smallest = i
+        for j in range(i + 1, len(alist)):
+            if alist[j] < alist[smallest]:
+                smallest = j
+        alist[i], alist[smallest] = alist[smallest], alist[i]
+ 
+ 
+alist = input('Enter the list of numbers: ').split()
+alist = [int(x) for x in alist]
+selection_sort(alist)
+print('Sorted list: ', end='')
+print(alist)
+str=input("Enter Your String:")arr=[0]*256for i in range(len(str)):    if str[i]!=' ':        num=ord(str[i])        arr[num]+=1ch=' 'print("First Non-repeating character in a given string is: ",end="")for i in range(len(str)):        if arr[ord(str[i])] ==1:            ch=str[i]            breakprint(ch,end="")
+
+import math
+rangenumber=int(input("Enter a Nth Number:"))
+c = 0
+letest = 0
+num = 1
+while c != rangenumber:
+    num1 = num
+    sqr = math.sqrt(num1)
+    if sqr-math.floor(sqr)==0:
+        c+=1
+        letest = num
+
+    num = num + 1
+print(rangenumber,"th Perfect Square number is ",latest)
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+# Compute transpose of two matrices
+tran_matrix=[[0 for i in range(col_size)] for i in range(row_size)]
+for i in range(0,row_size):
+    for j in range(0,col_size):
+        tran_matrix[i][j]=matrix[j][i]
+
+# display transpose of the matrix
+print("Transpose of the Given Matrix is:")
+for m in tran_matrix:
+    print(m)
+import math
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+# Calculate sum of the diagonals element
+# and Calculate sum of all the element
+trace=0
+sum=0
+for i in range(0, row_size):
+    for j in range(0, col_size):
+        if i==j:
+            trace += matrix[i][j]
+        sum+=matrix[i][j]
+normal=math.sqrt(sum)
+
+# Display the normal and trace of the matrix
+print("Normal Of the Matrix is: ",normal)
+print("Trace Of the Matrix is: ",trace)
+def factorial(n):
+    if(n <= 1):
+        return 1
+    else:
+        return(n*factorial(n-1))
+n = int(input("Enter number:"))
+print("Factorial:")
+print(factorial(n))
+
+import math
+print("Enter the range of number:")
+n=int(input())
+sum=0.0
+fact=1
+for i in range(1,n+1):
+    sum += pow(i, i) / i
+print("The sum of the series = ",sum)
+s1=raw_input("Enter first string:")
+s2=raw_input("Enter second string:")
+a=list(set(s1)|set(s2))
+print("The letters are:")
+for i in a:
+    print(i)
+# Get size of matrix
+row_size=int(input("Enter the row Size Of the Matrix:"))
+col_size=int(input("Enter the columns Size Of the Matrix:"))
+
+matrix=[]
+# Taking input of the matrix
+print("Enter the Matrix Element:")
+for i in range(row_size):
+    matrix.append([int(j) for j in input().split()])
+
+
+#Display Upper triangular matrix
+print("Upper Triangular Matrix is:")
+for i in range(len(matrix)):
+    for j in range(len(matrix[0])):
+        if i>j:
+            print("0 ",end="")
+        else:
+            print(matrix[i][j],end=" ")
+    print()
+d={'A':10,'B':10,'C':239}
+tot=1
+for i in d:    
+    tot=tot*d[i]
+print(tot)
+arr=[]size = int(input("Enter the size of the array: "))print("Enter the Element of the array:")for i in range(0,size):    num = int(input())    arr.append(num)print("Before sorting array elements are:")for i in range(0,size):    print(arr[i],end=" ")for i in range(0,size):    for j in range(i+1, size):        if arr[i] <= arr[j]:            temp = arr[i]            arr[i] = arr[j]            arr[j] = tempprint("\nAfter Decreasing order sort Array Elements are:")for i in range(0, size):        print(arr[i],end=" ")
+class BinaryTree:
+    def __init__(self, key=None):
+        self.key = key
+        self.left = None
+        self.right = None
+ 
+    def set_root(self, key):
+        self.key = key
+ 
+    def inorder(self):
+        if self.left is not None:
+            self.left.inorder()
+        print(self.key, end=' ')
+        if self.right is not None:
+            self.right.inorder()
+ 
+    def insert_left(self, new_node):
+        self.left = new_node
+ 
+    def insert_right(self, new_node):
+        self.right = new_node
+ 
+    def search(self, key):
+        if self.key == key:
+            return self
+        if self.left is not None:
+            temp =  self.left.search(key)
+            if temp is not None:
+                return temp
+        if self.right is not None:
+            temp =  self.right.search(key)
+            return temp
+        return None
+ 
+    def print_left_boundary(self):
+        current = self
+        while True:
+            if current.left is not None:
+                print(current.key, end=' ')
+                current = current.left
+            elif current.right is not None:
+                print(current.key, end=' ')
+                current = current.right
+            else:
+                break
+ 
+    def print_right_boundary(self):
+        if self.right is not None:
+            self.right.print_right_boundary()
+            print(self.key, end=' ')
+        elif self.left is not None:
+            self.left.print_right_boundary()
+            print(self.key, end=' ')
+ 
+ 
+    def print_leaves(self):
+        if self.left is not None:
+            self.left.print_leaves()
+        if self.right is not None:
+            self.right.print_leaves()
+        if (self.left is None
+            and self.right is None):
+            print(self.key, end=' ')
+ 
+    def print_border(self):
+        print(self.key, end=' ')
+        if self.left is not None:
+            self.left.print_left_boundary()
+            self.left.print_leaves()
+        if self.right is not None:
+            self.right.print_leaves()
+            self.right.print_right_boundary()
+ 
+ 
+btree = None
+ 
+print('Menu (this assumes no duplicate keys)')
+print('insert <data> at root')
+print('insert <data> left of <data>')
+print('insert <data> right of <data>')
+print('border')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'insert':
+        data = int(do[1])
+        new_node = BinaryTree(data)
+        suboperation = do[2].strip().lower() 
+        if suboperation == 'at':
+                btree = new_node
+        else:
+            position = do[4].strip().lower()
+            key = int(position)
+            ref_node = None
+            if btree is not None:
+                ref_node = btree.search(key)
+            if ref_node is None:
+                print('No such key.')
+                continue
+            if suboperation == 'left':
+                ref_node.insert_left(new_node)
+            elif suboperation == 'right':
+                ref_node.insert_right(new_node)
+ 
+    elif operation == 'border':
+        if btree is not None:
+            print('Border of tree: ')
+            btree.print_border()
+            print()
+ 
+    elif operation == 'quit':
+        break
+
+import math
+print("Enter a range:")
+range1=int(input())
+range2=int(input())
+print("Sunny numbers between ",range1," and ",range2," are: ")
+for i in range(range1,range2+1):
+    root = math.sqrt(i+ 1)
+    if int(root)==root:
+        print(i,end=" ")
+Solution
+class American(object):
+    @staticmethod
+    def printNationality():
+        print "America"
+
+anAmerican = American()
+anAmerican.printNationality()
+American.printNationality()
+
+
+
+
+
+row_size=int(input("Enter the row size:"))for out in range(row_size,-(row_size+1),-1):    for inn in range(0,abs(out)+1):        print("*",end="")    print("\r")
+fname = input("Enter file name: ")
+word=input("Enter word to be searched:")
+k = 0
+ 
+with open(fname, 'r') as f:
+    for line in f:
+        words = line.split()
+        for i in words:
+            if(i==word):
+                k=k+1
+print("Occurrences of the word:")
+print(k)
+
+arr=[]
+arr2=[]
+size = int(input("Enter the size of the 1st array: "))
+size2 = int(input("Enter the size of the 2nd array: "))
+
+print("Enter the Element of the 1st array:")
+for i in range(0,size):
+    num = int(input())
+    arr.append(num)
+
+print("Enter the Element of the 2nd array:")
+for i in range(0,size2):
+    num2 = int(input())
+    arr2.append(num2)
+
+count=0
+for i in range(0, size):
+    for j in range(0, size2):
+        if arr[i] == arr2[j]:
+            count+=1
+
+if count>=1:
+    print("Arrays are not disjoint.")
+else:
+    print("Arrays are disjoint.")
+# Get size of matrixrow_size=int(input("Enter the row Size Of the Matrix:"))col_size=int(input("Enter the columns Size Of the Matrix:"))matrix=[]# Taking input of the matrixprint("Enter the Matrix Element:")for i in range(row_size):    matrix.append([int(j) for j in input().split()])# display the Matrixprint("Given Matrix is:")for m in matrix:    print(m)
+def check(n, div = None):
+    if div is None:
+        div = n - 1
+    while div >= 2:
+        if n % div == 0:
+            print("Number not prime")
+            return False
+        else:
+            return check(n, div-1)
+    else:
+        print("Number is prime")
+        return 'True'
+n=int(input("Enter number: "))
+check(n)
+
+num1=int(input("Enter a number:"))
+num2=int(input("Enter a number:"))
+
+addition=num1+num2
+multiplication=num1*num2
+average=(num1+num2)/2
+
+print("Addition =",addition)
+print("Multiplication =",multiplication)
+print("Average =",average)
+
+def sum(num1,num2):    if num2==0:        return num1    return sum(num1, num2-1)+1print("Enter the two Number:")num1=int(input())num2=int(input())print("Sum of Two Number Using Recursion is: ",sum(num1,num2))
+fname = input("Enter file name: ")
+ 
+num_words = 0
+ 
+with open(fname, 'r') as f:
+    for line in f:
+        words = line.split()
+        num_words += len(words)
+print("Number of words:")
+print(num_words)
+d={'A':1,'B':2,'C':3}
+key=raw_input("Enter key to check:")
+if key in d.keys():
+      print("Key is present and value of the key is:")
+      print(d[key])
+else:
+      print("Key isn't present!")
+row_size=int(input("Enter the row size:"))for out in range(1,row_size+1):    for inn in range(row_size,out,-1):        print(" ",end="")    for p in range(1,out+1):        print(out,end=" ")    print("\r")
+ 
+n=int(input("Enter number: "))
+if(n>0):
+    print("Number is positive")
+else:
+    print("Number is negative")
+
+def f(n):
+    if n == 0: return 0
+    elif n == 1: return 1
+    else: return f(n-1)+f(n-2)
+
+n=int(raw_input())
+values = [str(f(x)) for x in range(0, n+1)]
+print ",".join(values)
+
+
+
+
+raise RuntimeError('something wrong')
+
+
+
+
+
+print("Enter the row and column size:");
+row_size=input()
+for out in range(ord(row_size),ord('A')-1,-1):
+    for i in range(ord('A'),out+1):
+        print(chr(i),end=" ")
+    print("\r")
+
+print("Enter the range of number:")
+n=int(input())
+print("Enter the value of x:")
+x=int(input())
+sum=1.0
+i=1
+while(i<=n):
+    sum+=pow(x,i)/i
+    i+=1
+print("The sum of the series = ",sum)

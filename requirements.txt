@@ -1,0 +1,4 @@
+accelerate===0.18.0
+bitsandbytes==0.37.2
+transformers @ git+https://github.com/huggingface/transformers.git@204737fcc5213be86dc9b83f6db42bc7aefb574b
+tree-sitter==0.2.2

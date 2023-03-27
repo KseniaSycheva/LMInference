@@ -1,0 +1,421 @@
+Find the length of the string without using the inbuilt function
+Write a program which can filter() to make a list whose elements are even number between 1 and 20 (both included).
+:
+Define a function that can accept two strings as input and concatenate them and then print it in console.
+:
+Binary to Decimal conversion using recursion
+Python Program to Convert Binary to Gray Code
+Program to convert octal to binary 
+Program to print series 2 4 7 12 21 ...N
+Program to check two matrix are equal or not
+ Reverse a given string using recursion
+Write a program which can compute the factorial of a given numbers.
+The results should be printed in a comma-separated sequence on a single line.
+Program to print series 1 2 5 8 15 28 51 94 ...N
+Python Program to Find the Power of a Number Using Recursion
+Python Program to Check if Expression is correctly Parenthesized
+Count how many vowels present in a string
+Convert Octal to decimal using recursion
+Python Program to Find the Largest Element in a Doubly Linked List
+Python Program to Find if Undirected Graph contains Cycle using DFS
+Program to Find nth Spy Number 
+Find out how many 1 and 0 in a given number.
+Program to check two matrix are equal or not
+Find the Longest word in a string
+Python Program to Convert Gray Code to Binary
+Python Program to Implement a Stack
+Python Program to solve Maximum Subarray Problem using Divide and Conquer
+Write a program that accepts a comma separated sequence of words as input and prints the words in a comma-separated sequence after sorting them alphabetically.
+Program to calculate the LCM of two numbers
+Count inversions in an array
+Python Program to Generate a Dictionary that Contains Numbers (between 1 and n) in the Form (x,x*x).
+Python Program to Reverse a String without using Recursion
+Python Program to Count all Paths in a Grid with Holes using Dynamic Programming with Bottom-Up Approach
+Python Program to Read Height in Centimeters and then Convert the Height to Feet and Inches
+
+Please write a program to output a random number, which is divisible by 5 and 7, between 0 and 10 inclusive using random module and list comprehension.
+
+
+:
+Python Program to Read the Contents of a File
+
+Please write a program using generator to print the even numbers between 0 and n in comma separated form while n is input by console.
+
+Define a function that can receive two integral numbers in string form and compute their sum and then print it in console.
+:
+
+By using list comprehension, please write a program to print the list after removing the 0th,4th,5th numbers in [12,24,35,70,88,120,155].
+:
+Print the Full Inverted Pyramid Alphabet Pattern
+
+Please write a program which accepts basic mathematic expression from console and print the evaluation result.
+
+Print vowels in a string
+Python Program to Merge Two Lists and Sort it
+Max sum contiguous subarray
+Python Program to Find All Numbers which are Odd and Palindromes Between a Range of Numbers without using Recursion
+Program to Print Cube Number series 1 8 27 64...N
+Python Program to Implement Merge Sort
+Program to reverse a string without using the reverse function
+Write a program which can map() to make a list whose elements are square of numbers between 1 and 20 (both included).
+:
+Program to find the sum of series 1^2+2^2+3^2...+N^2
+Program to find the transpose of a matrix
+Program to Find the Biggest of three numbers
+Python Program to Form an Integer that has the Number of Digits at Ten's Place and the Least Significant Digit of the Entered Integer at One's Place
+Define a function which can generate and print a list where the values are square of numbers between 1 and 20 (both included).
+:
+Multiply two numbers using recursion
+Write C|Java|C++|Python Program to compute 1/N!
+ Program to print the Solid Half Diamond Star Pattern
+Define a class which has at least two methods:
+getString: to get a string from console input
+printString: to print the string in upper case.
+Also please include simple test function to test the class methods.
+:
+Count number of digits in a number using recursion
+Program to Print the Hollow Rectangle Star Pattern
+Program to check two strings are anagrams or not
+Python Program to Implement Introsort
+Python Program to Search the Number of Times a Particular Number Occurs in a List
+Print perfect square numbers in a given range
+Find maximum and minimum elements in array using recursion
+Write a program to print the alphabet pattern
+Capitalize First letter of each word in String
+Python Program to Compute a Polynomial Equation given that the Coefficients of the Polynomial are stored in a List
+Write a program which accepts a string as input to print "Yes" if the string is "yes" or "YES" or "Yes", otherwise print "No". 
+:
+Convert Uppercase to Lowercase using string function
+Program to print inverted pyramid star pattern
+Python Program to Find the Sum of All Nodes in a Binary Tree
+Find sum of even numbers using recursion in an array
+
+Write a program to read an ASCII string and to convert it to a unicode string encoded by utf-8.
+:
+Program to Find the sum of a lower triangular matrix
+ Program to print the Inverted Half Pyramid Number Pattern
+Find the median of two unsorted arrays
+Program to Find the multiplication of two matrices
+Python Program to Print all Integers that Aren't Divisible by Either 2 or 3 and Lie between 1 and 50.
+Program to Find Surface area and volume of a sphere
+Find out all Neon numbers present within a given range
+Find the First Capital Letter in a given String
+Convert Lowercase to Uppercase without using the inbuilt function
+Find out all Pronic numbers present within a given range
+Python Program to Display the Nodes of a Linked List in Reverse using Recursion
+Python Program to Check if a String is a Palindrome or Not
+Find out all Evil numbers present within a given range
+Program to Find Nth Abundant Number
+Python Program to Implement Dequeue
+Check a given number is an Automorphic number or not
+Merging two unsorted arrays of different lengths
+Python Program to Print the Pascal's triangle for n number of rows given by the user
+Python Program to Find the Sum of the Digits of the Number Recursively
+Check a given number is an Armstrong Number
+Python Program to Implement Circular Doubly Linked List
+Python Program to Copy the Contents of One File into Another
+Add between 2 numbers without using arithmetic operators
+Write a program to sum of all digits of a number.
+Python Program to Find the Sum of the Series: 1 + x^2/2 + x^3/3 + … x^n/n
+Program to Calculate the surface area and volume of a Cuboid 
+Find frequency of characters in a string
+Program to Find the sum of series 1/1!+1/2!+1/3!.....+1/N!
+Find reverse of a number using recursion
+Python Program that Displays which Letters are in the Two Strings but not in Both
+Program to Find the sum of series 1/2+2/3+3/4.....+(N-1)/N
+Python Program to Find the Sum of Sine Series
+Python Program to Create a List of Tuples with the First Element as the Number and Second Element as the Square of the Number
+Python Program to Clear the Rightmost Set Bit of a Number
+Print a string using an array
+Check whether a given number is a Harshad number or not
+delete an element from an array
+    Python has many built-in functions, and if you do not know how to use it, you can read document online or find some books. But Python has a built-in document function for every built-in functions.
+    Please write a program to print some Python built-in functions documents, such as abs(), int(), raw_input()
+    And add document for your own function
+    :
+Python Program to Implement Binary Heap
+Program to Find the sum of series 2+4+6+8.....+N
+Python Program to Find the LCM of Two Numbers Using Recursion
+Program to read and display a Matrix
+Find the type of the array
+Find out all Harshad numbers present within a given range
+Find length of string using recursion
+Program to print series 1,-2,6,-15,31...N
+Program to compute the area and perimeter of Pentagon
+Python Program to Find the Sum of Cosine Series
+Find the smallest element in the array
+Find the sum of all elements in a 2D Array
+
+Write a program to solve a classic ancient Chinese puzzle: 
+We count 35 heads and 94 legs among the chickens and rabbits in a farm. How many rabbits and how many chickens do we have?
+
+Hint:
+Write a program to print the alphabet pattern
+Check whether a given number is an Abundant number or not
+Program to Find sum of series 1-2+3-4+5...+N
+Python Program to Read a List of Words and Return the Length of the Longest One
+Print Average of Numbers in array at even position  
+Print First 50 natural numbers using recursion
+Check whether number is Disarium Number or Not
+Define a class with a generator which can iterate the numbers, which are divisible by 7, between a given range 0 and n.
+:
+Python Program to Map Two Lists into a Dictionary
+Print the Hollow Diamond Number Pattern
+Program to find the sum of an upper triangular matrix
+Python Program to Check if a Number is an Armstrong Number
+Python Program to Find the Fibonacci Series without Using Recursion
+Python Program to Read a String from the User and Append it into a File
+Remove all lowercase characters in the string
+Print prime numbers in a given range(1 to n)
+Python Program to Check Common Letters in Two Input Strings
+Python Program to Print Nth Node from the last of a Linked List
+Program to convert seconds to hour, minute and seconds
+Python Program to Display the Nodes of a Tree using BFS Traversal
+Check given string is palindrome or not
+Python Program to Implement Stack using One Queue
+ Program to print the Full Pyramid Number Pattern
+Python Program to Print an Inverted Star Pattern
+Write a program to print the alphabet pattern
+Print lists occurring elements in an array
+Python Program to Find the Sum of Digits in a Number without Recursion
+Python Program to Print Sum of Negative Numbers, Positive Even Numbers and Positive Odd numbers in a List
+Python Program to Implement D-ary-Heap
+Python Program to Read the Contents of a File in Reverse Order
+Define a function which can print a dictionary where the keys are numbers between 1 and 3 (both included) and the values are square of keys.
+:
+Program to check whether a matrix is a scalar or not
+Python Program to Find the Union of two Lists
+Python Program to Implement Queue Data Structure using Linked List
+
+
+Print a unicode string "hello world".
+:
+
+Please write a program to generate all sentences where subject is in ["I", "You"] and verb is in ["Play", "Love"] and the object is in ["Hockey","Football"].
+:
+Check whether a given number is a perfect square number or not. 
+Python Program to Calculate the Average of Numbers in a Given List
+Check whether number is Pronic Number or Not
+Check if given String is palindrome using recursion
+Find maximum product of 3 numbers in an array
+Print all the odd numbers from 1 to n
+Program to print series 10,5,60,15,110...N
+Program to find sum of series (1+(1+2)+(1+2+3)+...till N)
+Program to Find the sum of series 3+33+333.....+N
+Python Program to Remove the ith Occurrence of the Given Word in a List where Words can Repeat
+Program to convert Hexadecimal to Decimal 
+Program to Find square of a matrix 
+Find factorial of a number using recursion
+Find the sum of Even numbers using recursion
+Write a program to find the nth strong number
+Python Program to Implement Graph
+program to find the prime factors of a number
+
+Please write a program to shuffle and print the list [3,6,7,8].
+
+
+:
+
+Please write a program to randomly generate a list with 5 numbers, which are divisible by 5 and 7 , between 1 and 1000 inclusive.
+
+
+:
+Python Program to Take in Two Strings and Display the Larger String without Using Built-in Functions
+Write a program to print the alphabet pattern
+Program to Find the sum of series 1+11+111.....+N
+Program to swap two numbers without third variable
+Python Program to Implement Bellman-Ford Algorithm
+Python Program to Count the Number of Blank Spaces in a Text File
+Print the Solid Diamond Number Pattern
+With a given tuple (1,2,3,4,5,6,7,8,9,10), write a program to print the first half values in one line and the last half values in one line. 
+:
+Find sum of Odd numbers using recursion in an array
+Write a program to compute the frequency of the words from the input. The output should output after sorting the key alphanumerically. 
+
+Please write a program to print the list after removing delete even numbers in [5,6,77,45,22,12,24].
+:
+Python Program to Exchange the Values of Two Numbers Without Using a Temporary Variable
+Python Program to Check if a Date is Valid and Print the Incremented Date if it is
+Find the sum of all diagonal elements of a matrix
+Python Program to Compute Simple Interest Given all the Required Values
+Program to Find nth Happy Number 
+Write a program to print the pattern
+Find out all Magic numbers present within a given range
+Program to find the sum of an upper triangular matrix
+
+
+Please write assert statements to verify that every number in the list [2,4,6,8] is even.
+
+
+:
+
+Please write a program which count and print the numbers of each character in a string input by console.
+
+ Find out all Armstrong numbers present within a given range
+Python Program to Implement Gnome Sort
+Program to print Triangular Number series 1 3 6 10 15 ...N
+Python Program to Find Shortest Path From a Vertex using BFS in an Unweighted Graph
+Python Program to Find if Undirected Graph is Bipartite using DFS
+Subtract Two Numbers Operator without using Minus(-) operator
+Python Program to Find Longest Common Subsequence using Dynamic Programming with Memoization
+Python Program to Print the Alternate Nodes in a Linked List using Recursion
+Program to Find the factorial of a number
+Quick Sort Program in Python | Java | C | C++
+Move all zeros to the end of an Array
+Write C|Java|C++|Python Program to compute x^n/n!
+Python Program to Find the Binary Equivalent of a Number Recursively
+Python Program to Read a Number n and Print the Natural Numbers Summation Pattern
+Python Program to Print an Identity Matrix
+
+
+The Fibonacci Sequence is computed based on the following formula:
+
+
+f(n)=0 if n=0
+f(n)=1 if n=1
+f(n)=f(n-1)+f(n-2) if n>1
+
+Please write a program to compute the value of f(n) with a given n input by console.
+
+
+Please write a program which accepts a string from console and print it in reverse order.
+
+Sort array in ascending order using recursion
+Check whether a given number is a perfect number or not
+Program to find sum of series 1!+2!+3!...+n!
+Python Program to Check if a String is a Pangram or Not
+Program to Find area and perimeter of a square
+Write a program that calculates and prints the value according to the given formula:
+Q = Square root of [(2 * C * D)/H]
+Following are the fixed values of C and H:
+C is 50. H is 30.
+D is the variable whose values should be input to your program in a comma-separated sequence.
+Python Program to Find the Gravitational Force Acting Between Two Objects
+Print the ASCII value of character in a String
+Check prime number using Recursion
+Find lexicographic rank of a given string
+ Find the largest element in the array
+ Program to print the Solid Half Diamond Alphabet Pattern
+Write a program to find the nth strong number
+Program to Find the sum of a lower triangular matrix
+Python Program to Implement Insertion Sort
+Add between 2 numbers without using arithmetic operators
+Program to calculate speed in km/hr
+Program to convert binary to decimal using while loop
+Program to find the normal and trace of a matrix
+Program to find sum of series 1!/1+2!/2+3!/3+4!/4+5!/5 ...+n!/n
+Python Program to Find Minimum Spanning Tree using Prim’s Algorithm
+Print numbers from 1 to 100 using for loop
+Python Program to Find the Sum of all Nodes in a Tree
+Print the Full Inverted Pyramid Number Pattern
+Program to find sum of series 1/2-2/3+3/4-4/5+5/6...+N/N+1
+Check whether number is Happy Number or Not
+Find the length of the string using the inbuilt function
+Python Program to Take in a String and Replace Every Blank Space with Hyphen
+Python Program to Find the Cumulative Sum of a List where the ith Element is the Sum of the First i+1 Elements From The Original List
+Program to enter basic salary and calculate gross salary of an employee
+Python Program to Solve Rod Cutting Problem using Dynamic Programming with Bottom-Up Approach
+Python Program to Check Whether a String is a Palindrome or not Using Recursion
+Program to Find the sum of series 1³+2³+3³+4³.....+N³
+Write C|Java|C++|Python Program to compute x^n/n!
+Program to Convert Hexadecimal Number to Binary
+    Write a method which can calculate square value of number
+:
+Find out all Happy numbers present within a given range
+Python Program to Print only Nodes in Left SubTree
+Print Average of Numbers in array at Odd position  
+
+With two given lists [1,3,6,78,35,55] and [12,24,35,24,88,120,155], write a program to make a list whose elements are intersection of the above given lists.
+:
+Sum of elements in array using recursion
+Find the sum of negative and positive numbers in array
+Python Program to Check if a Number is a Perfect Number
+Python Program to Find Whether a Number is a Power of Two
+Python Program to Select the ith Smallest Element from a List in Expected Linear Time
+Program to print all alphabets from A to Z using loop
+Program to find the sum of series 1+3+5+7..+N
+Find the Minimum occurring character in given string
+Program to Find subtraction of two matrices
+Define a function which can generate and print a tuple where the value are square of numbers between 1 and 20 (both included). 
+:
+Python Program to Create a Class and Get All Possible Subsets from a Set of Distinct Integers
+Python Program to Print All Permutations of a String in Lexicographic Order using Recursion
+Python Program to Remove the nth Index Character from a Non-Empty String
+Write a Program to Find the nth Prime Number
+Find words ending with given characters(suffix)
+Python Program to Implement Linear Search
+Python Program to Solve n-Queen Problem with Recursion
+Python Program to Swap the First and Last Value of a List
+Write a program to print the alphabet pattern
+Program to convert a decimal number to Binary
+Find the sum of digits of a number using recursion
+Check if a string contains at least one Number
+Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys. The function should just print the values only.
+:
+Program to print series -1 4 -7 10 -13 16 -19...n
+Python Program to Print nth Fibonacci Number using Dynamic Programming with Bottom-Up Approach
+Find the First small Letter in a given String
+Program to compute the area and perimeter of Octagon
+Python Program to Check if a Number is a Palindrome
+Print multiplication table using recursion
+Python Program to Form a New String Made of the First 2 and Last 2 characters From a Given String
+Program to find the sum of series 1+X+X^3...+X^N
+Program to print Arithmetic series 1 4 7 10...N
+Check whether a given matrix is an identity matrix or not
+Program to print ascii value of a character
+Find subtraction of two numbers using recursion
+Program to Find subtraction of two matrices
+Python Program to Find if Undirected Graph is Bipartite using BFS
+Program to find sum of series 1+1/3+1/5+1/7+.....1/(N+2)
+Use a list comprehension to square each odd number in a list. The list is input by a sequence of comma-separated numbers.
+Python Program to Find the Second Largest Number in a List
+Find a pair with maximum product in array
+Program to display an upper triangular matrix
+Python Program to Find Minimum Spanning Tree using Krusal’s Algorithm
+Check whether number is Magic Number or Not.
+Program to Find the sum of series 3+7+13+21.....+N
+Python Program to Solve the Celebrity Problem
+Python Program to Find the Sum of First N Natural Numbers
+Python Program to Implement Selection Sort
+Find first non repeating character in a string
+Program to Find nth Perfect Square Number
+Program to find the transpose of a matrix
+Program to find the normal and trace of a matrix
+Python Program to Find the Factorial of a Number Using Recursion
+Find sum of series 1^1/1+2^2/2+3^3/3...+n^n/n
+Python Program that Displays which Letters are Present in Both the Strings
+Program to display an upper triangular matrix
+Python Program to Multiply All the Items in a Dictionary
+Program to Sort an array in Descending order
+Python Program to Print Border of given Tree in Anticlockwise Direction
+Find out all Sunny numbers present within a given range
+Define a class named American which has a static method called printNationality.
+:
+Program to Print the Double Pyramid Star Pattern
+Python Program to Count the Occurrences of a Word in a Text File
+Check if two arrays are the disjoint or not
+Program to read and display a Matrix
+Python Program to Find if a Number is Prime or Not Prime Using Recursion
+Find sum multiplication and an average of two numbers
+Find sum of two numbers using recursion
+Python Program to Count the Number of Words in a Text File
+Python Program to Check if a Given Key Exists in a Dictionary or Not
+ Print the Full Pyramid Number Pattern
+Python Program to Check Whether a Number is Positive or Negative
+
+The Fibonacci Sequence is computed based on the following formula:
+
+
+f(n)=0 if n=0
+f(n)=1 if n=1
+f(n)=f(n-1)+f(n-2) if n>1
+
+Please write a program using list comprehension to print the Fibonacci Sequence in comma separated form with a given n input by console.
+
+
+
+
+Please raise a RuntimeError exception.
+:
+Program to print inverted right triangle alphabet pattern
+Program to find the sum of series 1+X+X^2/2...+X^N/N
