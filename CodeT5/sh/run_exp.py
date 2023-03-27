@@ -48,7 +48,7 @@ def get_args_by_task_model(task, sub_task, model_tag):
             trg_len = 240
         epoch = 50
         patience = 5
-    elif task == 'concode':
+    elif 'concode' in task:
         # Read 100000 examples, avg src len: 71, avg trg len: 26, max src len: 567, max trg len: 140
         # [TOKENIZE] avg src len: 213, avg trg len: 33, max src len: 2246, max trg len: 264
         src_len = 320
@@ -90,7 +90,7 @@ def get_args_by_task_model(task, sub_task, model_tag):
             else:
                 bs = 10
     lr = 5
-    if task == 'concode':
+    if 'concode' in task:
         lr = 10
     elif task == 'defect':
         lr = 2
@@ -138,7 +138,7 @@ def get_sub_tasks(task):
         sub_tasks = ['java-cs', 'cs-java']
     elif task == 'refine':
         sub_tasks = ['small', 'medium']
-    elif task in ['concode', 'defect', 'clone', 'multi_task']:
+    elif task in ['concode', 'defect', 'clone', 'multi_task', 'concode_nl2py']:
         sub_tasks = ['none']
     return sub_tasks
 
@@ -147,7 +147,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_tag", type=str, default='codet5_base',
                         choices=['roberta', 'codebert', 'bart_base', 'codet5_small', 'codet5_base', 'codet5_large'])
-    parser.add_argument("--task", type=str, default='summarize', choices=['summarize', 'concode', 'translate',
+    parser.add_argument("--task", type=str, default='summarize', choices=['summarize', 'concode', 'translate', 'concode_nl2py', 
                                                                           'refine', 'defect', 'clone', 'multi_task'])
     parser.add_argument("--sub_task", type=str, default='ruby')
     parser.add_argument("--res_dir", type=str, default='results', help='directory to save fine-tuning results')

@@ -365,8 +365,10 @@ def main():
 
         for criteria in ['best-bleu']:
             file = os.path.join(args.output_dir, 'checkpoint-{}/pytorch_model.bin'.format(criteria))
-            logger.info("Reload model from {}".format(file))
-            # model.load_state_dict(torch.load(file))
+        
+            if not args.do_train and args.load_model_path != 'None' and args.load_model_path is not None:
+                logger.info("Reload model from {}".format(file))
+                model.load_state_dict(torch.load(file))
             eval_examples, eval_data = load_and_cache_gen_data(args, args.test_filename, pool, tokenizer, 'test',
                                                                only_src=True, is_sample=False)
             result = eval_bleu_epoch(args, eval_data, eval_examples, model, tokenizer, 'test', criteria)

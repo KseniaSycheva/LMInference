@@ -80,9 +80,9 @@ def build_or_load_gen_model(args):
 
     logger.info("Finish loading model [%s] from %s", get_model_size(model), args.model_name_or_path)
 
-    # if args.load_model_path is not None:
-    #     logger.info("Reload model from {}".format(args.load_model_path))
-    #     model.load_state_dict(torch.load(args.load_model_path))
+    if args.load_model_path is not None and args.load_model_path != 'None':
+        logger.info("Reload model from {}".format(args.load_model_path))
+        model.load_state_dict(torch.load(args.load_model_path))
 
     return config, model, tokenizer
 
